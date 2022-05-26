@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/haimor/b-ball'
+make: Leaving directory '/home/haimor/b-ball'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+
