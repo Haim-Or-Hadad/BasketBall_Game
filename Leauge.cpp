@@ -8,7 +8,8 @@ namespace ariel
 Leauge::Leauge(){
     for (size_t i = 0; i < 20; i++)
     {
-        this->all_teams->push_back(&Team());
+        Team *t = new Team();
+        this->all_teams->push_back(t);
     }
     
 }

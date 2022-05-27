@@ -4,7 +4,7 @@
 
 #include <string>
 #include <iostream>
-#include "Role.cpp"
+#include "Role.hpp"
 //#include "Team.hpp"
 namespace ariel
 {
@@ -22,13 +22,9 @@ public:
     /*****defualt constructor*****/
     Player();
     /*****Player constructor******/
-    Player(std::string name, int age, Team &team)
-    {
-        this->name = std::move(name);
-        this->age = age;
-        this->role = roles[rand() % roles.size()];//take one name from enum 
-        this->team = &team ;//need to complete!!!!!!!!!
-    }
+    Player(std::string name, int age, Team &team);
+    /***Player constructor with team****/
+    Player(Team &team);
     ~Player(){};
 
     /***********inline getters*************/
@@ -43,16 +39,6 @@ public:
     void setAge(int other_age){this->age = other_age;}
     void setName(std::string &other_name){this->name = other_name;}
     
-    
-    std::vector<std::string> roles = 
-    {"Point_Guard",
-     "Shooting_Guard",
-      "Small_Forward",
-       "Power_Forward",
-        "Center"};
-    };
-
-
-
+};
 };
 #endif

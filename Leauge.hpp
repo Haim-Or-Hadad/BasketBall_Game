@@ -14,8 +14,10 @@ private:
 public:
     /*****League constructor******/
     Leauge(std::vector<Team*> & all_teams);
+    /*****defualt constructor*****/
     Leauge();
-    ~Leauge();
+
+    ~Leauge(){};
 
     /******inline getters*********/
     std::vector<Team*>& get_all_teams(){return *this->all_teams;}
@@ -26,6 +28,9 @@ public:
     void set_teams(std::vector<Team*>*teams){this->all_teams = teams;}
     void set_year_of_leauge(int curr_year){this->year = curr_year;}
     void set_best_team(Team *t){this->best_team = t;}
+
+    /****simulate new full leaugue****/
+    void build_leauge();
 };
 
 };

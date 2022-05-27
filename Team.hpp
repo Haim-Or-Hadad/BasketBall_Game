@@ -9,7 +9,6 @@
 
 namespace ariel
 {
-//class Player;
 class Team{
     std::string name;
     int wins;
@@ -21,6 +20,8 @@ public:
     Team();
     /*****Team constructor*****/
     Team(std::string & name, int wins, int losses, double talent, std::vector<Player*> & Players);
+    /*****Team constructor with name****/
+    Team(std::string name);
     ~Team(){};
 
     /*******inline getters******/
@@ -63,10 +64,18 @@ public:
      */
     void removePlayer(Player & player);
     /**
-     * @brief Create a random team object
+     * @brief Create a random players list
      * 
      */
-    Team & create_random_team();
+    Team & create_random_players();//{
+    // Team *t = new Team();
+    // t->name ="maccaabi";
+    // // t->losses =0;
+    // // t->wins =0;
+    // t->Players = new vector<Player*>;
+    // // t->talent = 0.5;
+    // return *t;
+    // }
     /****** Team operators********/
     bool operator ==(Team & t);
     //friend ostream& operator<<(ostream& output,Team const & team_);

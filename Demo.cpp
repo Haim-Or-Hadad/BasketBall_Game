@@ -2,6 +2,7 @@
 #include "Player.hpp"
 #include "Game.hpp"
 #include "Team.hpp"
+#include "Leauge.hpp"
 
 #include <exception>
 
@@ -13,14 +14,14 @@ using namespace ariel;
 using namespace std;
 
 int main() {
-
-	Team team_1{};
+	/********TEAM 1********/
+	Team team_1{"maccabi"};
 	string s = "moshe";
 	Player haim{s,24,team_1};
 	Player ilan{"ilan",27,team_1};
 	Player tomer{"tomer",25,team_1};
 	Player morgan{"morgan",30,team_1};
-	Player wade{"wade",32,team_1};
+	Player wade{};
 
 	team_1.addPlayer(haim);
 	team_1.addPlayer(ilan);
@@ -42,5 +43,31 @@ int main() {
 	for(Player * player : team_1.getPlayers()){
 		cout << player->getRole() << endl;
 	}
-	
+
+	/********TEAM 1********/
+	Team team_2{"Hapoel"};
+	Player doron{"doron",24,team_2};
+	Player boaz{"boaz",27,team_2};
+	Player amit{"amit",25,team_2};
+	Player anat{"anat",30,team_2};
+	Player yona{"yona",41,team_2};
+
+	team_2.addPlayer(doron);
+	team_2.addPlayer(boaz);
+	team_2.addPlayer(amit);
+	team_2.addPlayer(anat);
+	team_2.addPlayer(yona);
+
+	for(Player * player : team_2.getPlayers()){
+		cout << player->getName() << endl;
+	}
+
+	Game first_game{team_1,team_2};
+	first_game.play();
+	cout << first_game << endl;
+
+	///BUILD NEW LEAUGE///
+	Leauge _le{};
+	//cout << _le.get_all_teams().at(0)->getName() << endl;
+	//cout << _le.get_all_teams().at(1)->getPlayers().at(0)->getName() << endl;
 }

@@ -2,6 +2,7 @@
 #define Game_H
 #include "Team.hpp"
 #include "Player.hpp"
+#include <iostream>
 
 namespace ariel
 {
@@ -17,7 +18,7 @@ namespace ariel
      int team2_score;
  public:
     /*****defualt constructor*****/
-     Game();
+     //Game();
      /*****Game constructor*****/
      Game(Team & team1, Team & team2);
      ~Game();
@@ -37,7 +38,16 @@ namespace ariel
      void setLosser(Team & losserTeam){this->losser_team = &losserTeam;}
      void setScore1(int score){this->team1_score = score;}
      void setScore2(int score){this->team2_score = score;}
+    
+    /**
+     * @brief starting a new game of leauge
+     * 
+     */
+    void play();
 
+
+    /*****operators******/
+    friend std::ostream &operator<<(std::ostream &output,  Game &game);
  };
 
  

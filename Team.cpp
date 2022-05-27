@@ -2,14 +2,22 @@
 #include "Player.hpp"
 
 using namespace std;
-
+extern int myVar;
+int myVar = 0;
 namespace ariel
 {
 Team::Team(){
-    this->name ="maccaabi";
+    this->name =Group_names[myVar++%19];
     this->losses =0;
     this->wins =0;
-    this->Players = new vector<Player*>;
+    vector<Player*> _player;
+    for (size_t i = 0; i < 20; i++)
+    {
+        Player *p = new Player(*this);
+        _player.push_back(p);
+    }
+    cout << "-----" <<_player.at(5)->getName() << endl;
+    this->Players = &_player;
     this->talent = 0.5;
 
 }   
@@ -21,6 +29,14 @@ Team::Team(string & name, int wins, int losses, double talent, std::vector<Playe
     //this->setPlayers(Players);//this->Players= Players;
     this->setTalent(talent);//this->talent=talent;
     }
+
+Team::Team(string name){
+    this->name = name;
+    this->losses =0;
+    this->wins =0;
+    this->Players = new vector<Player*>;
+    this->talent = 0.5;
+}
 /**
  * @brief Explenation about the methods in the header file!
  * 
