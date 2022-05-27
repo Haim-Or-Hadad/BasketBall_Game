@@ -10,10 +10,10 @@ Leauge::Leauge(){
     {
         Team *t = new Team();
         this->all_teams->push_back(t);
-    }
-    
+    }  
 }
 Leauge::Leauge(std::vector<Team*> & all_teams){
     this->all_teams = &all_teams;
 }
+
 };

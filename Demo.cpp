@@ -68,6 +68,6 @@ int main() {
 
 	///BUILD NEW LEAUGE///
 	Leauge _le{};
-	//cout << _le.get_all_teams().at(0)->getName() << endl;
-	//cout << _le.get_all_teams().at(1)->getPlayers().at(0)->getName() << endl;
+	cout << _le.get_all_teams().at(0)->getName() << endl;
+	
 }

@@ -67,7 +67,7 @@ public:
      * @brief Create a random players list
      * 
      */
-    Team & create_random_players();//{
+    void  create_random_players();//{
     // Team *t = new Team();
     // t->name ="maccaabi";
     // // t->losses =0;

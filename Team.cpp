@@ -10,14 +10,7 @@ Team::Team(){
     this->name =Group_names[myVar++%19];
     this->losses =0;
     this->wins =0;
-    vector<Player*> _player;
-    for (size_t i = 0; i < 20; i++)
-    {
-        Player *p = new Player(*this);
-        _player.push_back(p);
-    }
-    cout << "-----" <<_player.at(5)->getName() << endl;
-    this->Players = &_player;
+    this->Players = new vector<Player*>;
     this->talent = 0.5;
 
 }   
@@ -26,7 +19,7 @@ Team::Team(string & name, int wins, int losses, double talent, std::vector<Playe
     this->setLosses(losses);
     this->setWins(wins);
     this->setName(name);//this->name=name;
-    //this->setPlayers(Players);//this->Players= Players;
+    this->setPlayers(Players);//this->Players= Players;
     this->setTalent(talent);//this->talent=talent;
     }
 
@@ -35,6 +28,7 @@ Team::Team(string name){
     this->losses =0;
     this->wins =0;
     this->Players = new vector<Player*>;
+    //create_random_players();
     this->talent = 0.5;
 }
 /**
@@ -54,7 +48,7 @@ void Team::addLoss()
 void Team::addPlayer(Player & player)
 {
     this->Players->push_back(&player);
-    player.setTeam(this);
+   // player.setTeam(this);
 }
 
 void Team::addTeam(vector<Player*> & players_)
@@ -63,7 +57,16 @@ void Team::addTeam(vector<Player*> & players_)
     {
         addPlayer(*player_);
     }
+}
+void  Team::create_random_players(){
+    //Team *T = new Team();
+    for (size_t i = 0; i < 7; i++)
+    {
+        Player *p = new Player(*this);
+        this->Players->push_back(p);
+    }
     
+}
 // void Team::removePlayer(Player & player)
 // {
 //     for
@@ -74,6 +77,6 @@ void Team::addTeam(vector<Player*> & players_)
 //  {
 
 //  }
-}
+//}
 
 };
