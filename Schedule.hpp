@@ -14,11 +14,11 @@ namespace ariel
   {
   private:
       std::vector<Game*> *games_list;
-      std::vector<Team*> *team_list;
+      //std::vector<Team*> *team_list;
       Leauge *leauge;
   public:
       //////constructor ger leauge////
-      Schedule(Leauge *leauge );
+      Schedule(Leauge *leauge);
       /////defualt constructor//////
       Schedule(){};
 
@@ -30,6 +30,7 @@ namespace ariel
     
 
      void operate_arrangment();
+     friend std::ostream &operator<<(std::ostream &output,  Schedule &schedule);
   };
   
     
