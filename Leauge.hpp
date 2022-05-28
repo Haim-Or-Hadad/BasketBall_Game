@@ -1,3 +1,5 @@
+#ifndef Leauge_H
+#define Leauge_H
  #include "Player.hpp"
  #include "Team.hpp"
 
@@ -34,3 +36,4 @@ public:
 };
 
 };
+#endif

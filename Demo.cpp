@@ -3,6 +3,7 @@
 #include "Game.hpp"
 #include "Team.hpp"
 #include "Leauge.hpp"
+#include "Schedule.hpp"
 
 #include <exception>
 
@@ -67,7 +68,15 @@ int main() {
 	cout << first_game << endl;
 
 	///BUILD NEW LEAUGE///
-	Leauge _le{};
-	cout << _le.get_all_teams().at(0)->getName() << endl;
+	Leauge le{};
+	cout << le.get_all_teams().at(0)->getName() << endl;
+	cout << le.get_all_teams().at(1)->getName() << endl;
+	cout << le.get_all_teams().at(2)->getName() << endl;
+	cout << le.get_all_teams().at(3)->getName() << endl;
+}		
+
+
+	//new Schedule
+	//Schedule season = new Schedule(le);
+
 	
-}

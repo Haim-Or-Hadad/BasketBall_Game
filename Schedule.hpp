@@ -1,8 +1,11 @@
+#ifndef Schedule_H
+#define Schedule_H
+
 #include <iostream>
 #include "string"
 #include "vector"
 #include "Game.hpp"
-//#include "Team.hpp"
+#include "Team.hpp"
 #include "Leauge.hpp"
 
 namespace ariel
@@ -12,11 +15,12 @@ namespace ariel
   private:
       std::vector<Game*> *games_list;
       std::vector<Team*> *team_list;
+      Leauge *leauge;
   public:
       //////constructor ger leauge////
-      Schedule(Leauge *leauge , std::vector<Team*> *t_list);
+      Schedule(Leauge *leauge );
       /////defualt constructor//////
-      Schedule();
+      Schedule(){};
 
       ~Schedule();
 
@@ -30,3 +34,4 @@ namespace ariel
   
     
 };
+#endif
