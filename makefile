@@ -25,6 +25,15 @@ test:  TestCounter.o Test.o $(OBJECTS)
 $(OBJECT_PATH)/%.o: $(SOURCE_PATH)/%.cpp $(HEADERS)
 	$(CXX) $(CXXFLAGS) --compile $< -o $@
 
+demo: Demo.o $(OBJECTS)
+	$(CXX) $(CXXFLAGS) $^ -o demo
+
+%.o: %.cpp $(HEADERS)
+	$(CXX) $(CXXFLAGS) --compile $< -o $@
+
+$(OBJECT_PATH)/%.o: $(SOURCE_PATH)/%.cpp $(HEADERS)
+	$(CXX) $(CXXFLAGS) --compile $< -o $@
+
 
 tidy:
 	clang-tidy $(SOURCES) $(HEADERS) $(TIDY_FLAGS) --

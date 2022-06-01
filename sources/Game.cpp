@@ -147,12 +147,10 @@ void Game::determine_game()
          /*****team 1*********/
         team1->add_seq_of_win(1);
         team1->reset_seq_loss();
-        setWinner(*team1);
         team1->addWin();
         /*****team 2*********/
         team2->reset_seq_win();
         team2->add_seq_of_loss(1);
-        setLosser(*team2);
         team2->addLoss();
      }
      else 
@@ -160,12 +158,10 @@ void Game::determine_game()
         /*****team 2*********/
         team1->add_seq_of_win(1);
         team1->reset_seq_loss();
-         setWinner(*team2);
          team2->addWin();
         /*****team 1*********/
         team1->add_seq_of_loss(1);
         team1->reset_seq_win();
-        setLosser(*team1);
         team1->addLoss();
      }
          

@@ -1,6 +1,7 @@
-make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/home/haimor/b-ball'
-make: Leaving directory '/home/haimor/b-ball'
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/haimor/BasketBall_Game'
+clang++-9 -std=c++2a -Werror -Wsign-conversion -Isources --compile TestCounter.cpp -o TestCounter.o
+clang++-9 -std=c++2a -Werror -Wsign-conversion -Isources --compile Test.cpp -o Test.o
+clang++-9 -std=c++2a -Werror -Wsign-conversion -Isources TestCounter.o Test.o objects/Team.o objects/simulator.o objects/Game.o objects/Leauge.o objects/Schedule.o -o test
+make: Leaving directory '/home/haimor/BasketBall_Game'
  
-make: *** No targets specified and no makefile found.  Stop.
-

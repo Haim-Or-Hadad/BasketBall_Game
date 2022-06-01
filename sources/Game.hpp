@@ -1,47 +1,69 @@
-#ifndef Game_H
-#define Game_H
+#pragma once 
+
 #include "Team.hpp"
 #include <iostream>
 
 namespace ariel
 {
- //class Player;
  class Game
  {
+/**
+ * @brief This class represents game of two team
+ * @param team1:team 1 details
+ * @param team2:team 2 details
+ * @param team1_score: score of team 1 in current game
+ * @param team2_score: score of team 2 in current game
+ */
  private:
      Team *team1;
      Team *team2;
-     Team * winner_team;
-     Team * losser_team;
      int team1_score;
      int team2_score;
  public:
-    /******defualt constructor*****/
-     //Game();
-     /*****Game constructor*****/
+     /*****Game constructor******/
      Game(Team & team1, Team & team2);
+     /******Game destructor******/
      ~Game();
 
-     /*********inline getters**********/
+     /**************************inline getters******************************/
+     /**
+      * @brief return pointer to team 1
+      */ 
      Team & getTeam1(){return *this->team1;}
+     /**
+      * @brief return pointer to team 2
+      */ 
      Team & getTeam2(){return *this->team2;}
-     Team & getWinner(){return *this->winner_team;}
-     Team & getLosser(){return *this->losser_team;}
+     /**
+      * @brief return the score of team 1
+      */ 
      int getScore1(){return this->team1_score;}
+     /**
+     * @brief return the score of team 2
+     */ 
      int getScore2(){return this->team2_score;}
 
-     /*********inline setters************/
+     /************************inline setters**************************/
+     /**
+     * @brief set team1 to be team_1 by refernce
+     */ 
      void setTeam1(Team & team_1){this->team1 = &team_1;}
+     /**
+     * @brief set team2 to be team_1 by refernce
+     */ 
      void setTeam2(Team & team_2){this->team2 = &team_2;}
-     void setWinner(Team & winnerTeam){this->winner_team = &winnerTeam;}
-     void setLosser(Team & losserTeam){this->losser_team = &losserTeam;}
+     /**
+     * @brief add score to team1
+     */ 
      void setScore1(int score){this->team1_score += score;}
+     /**
+      * @brief add score to team2
+      * 
+      * @param score 
+      */
      void setScore2(int score){this->team2_score += score;}
     
-    /**
-     * @brief starting a new game of leauge
-     * 
-     */
+    /*****************************class methods****************************/
     /**
      *@brief add score to the heighest team 
      */
@@ -71,10 +93,6 @@ namespace ariel
      */
     void score_star_team();
     /**
-     * @brief check result of game is equal 
-     * 
-     */
-    /**
      * @brief check wich team have more seq of wins  
      */
     void score_by_moral();
@@ -83,17 +101,16 @@ namespace ariel
      * 
      */
     void determine_game();
+    /**
+     * @brief play the game
+     * 
+     */
     void play();
 
 
     /*****operators******/
     friend std::ostream &operator<<(std::ostream &output,  Game &game);
  };
-
- 
-
-
-
 };
-#endif
+
 

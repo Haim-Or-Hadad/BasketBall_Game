@@ -55,8 +55,6 @@ namespace ariel
           this->round_games[i].at(j)->play();
           if (round_games[i].at(j)->getScore1()<55 || round_games[i].at(j)->getScore1()>110 )
           {
-            cout << round_games[i].at(j)->getScore1() <<endl;
-            cout << round_games[i].at(j)->getScore2() <<endl;
             throw invalid_argument("home team must have score between 55-100");
           }  
         }
@@ -87,6 +85,7 @@ namespace ariel
     {
     for (size_t j = 0; j < 10; j++)
       {
+        cout << "round: " << i << " " << "game: " << j << endl;
         cout << this->round_games[j][i]->getTeam1().getName();
         cout << "  vs  " ;
         cout << this->round_games[j][i]->getTeam2().getName();

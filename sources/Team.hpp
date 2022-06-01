@@ -60,7 +60,7 @@ public:
     /**
      * @brief getter:return the talent of team in integer
      */
-    int getTalent(){return this->talent;}
+    double getTalent(){return this->talent;}
     /**
      * @brief getter:return sum of heights of the players in the team
      */

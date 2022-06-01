@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri May 27 17:28:54 2022
+# Make data base, printed on Wed Jun  1 13:20:00 2022
 
 # Variables
 
@@ -14,8 +14,10 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
+# makefile (from 'makefile', line 11)
+VALGRIND_FLAGS = -v --leak-check=full --show-leak-kinds=all  --error-exitcode=99
 # environment
-WSLENV = VSCODE_WSL_EXT_LOCATION/up
+WSLENV = ELECTRON_RUN_AS_NODE/w:
 # default
 .SHELLFLAGS := -c
 # environment
@@ -27,17 +29,21 @@ VSCODE_LOG_NATIVE = false
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /home/haimor/b-ball
+CURDIR := /home/haimor/BasketBall_Game
 # makefile
 SHELL = /bin/sh
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
 # environment
-_ = /home/haimor/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/node
-# makefile
-MAKEFILE_LIST := 
+_ = /mnt/c/Users/haimo/AppData/Local/Programs/Microsoft VS Code/bin/code
+# makefile (from 'makefile', line 1)
+MAKEFILE_LIST :=  makefile
 # 'override' directive
 GNUMAKEFLAGS := 
+# makefile (from 'makefile', line 13)
+SOURCES = $(wildcard $(SOURCE_PATH)/*.cpp)
+# makefile (from 'makefile', line 9)
+CXXFLAGS = -std=$(CXXVERSION) -Werror -Wsign-conversion -I$(SOURCE_PATH)
 # environment
 XDG_DATA_DIRS = /usr/local/share:/usr/share:/var/lib/snapd/desktop
 # environment
@@ -47,23 +53,25 @@ VSCODE_CWD = /mnt/c/Users/haimo/AppData/Local/Programs/Microsoft VS Code
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/haimor/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/VMware/VMware Workstation/bin/:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/Microsoft SQL Server/150/DTS/Binn/:/mnt/c/Program Files/Azure Data Studio/bin:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/Program Files (x86)/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/DTS/Binn/:/mnt/c/Users/haimo/AppData/Local/Programs/Python/Python310/Scripts/:/mnt/c/Users/haimo/AppData/Local/Programs/Python/Python310/:/mnt/c/Program Files (x86)/VMware/VMware Workstation/bin/:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/Microsoft SQL Server/150/DTS/Binn/:/mnt/c/Program Files/Azure Data Studio/bin:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/Program Files (x86)/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/DTS/Binn/:/mnt/c/Users/jetbrains/AppData/Roaming/Python/Python37/Scripts:/mnt/c/Users/haimo/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files/Azure Data Studio/bin:/snap/bin
+PATH = /home/haimor/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.UbuntuonWindows_2004.2022.1.0_x64__79rhkp1fndgsc:/mnt/c/Program Files (x86)/VMware/VMware Workstation/bin/:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/Microsoft SQL Server/150/DTS/Binn/:/mnt/c/Program Files/Azure Data Studio/bin:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/Program Files (x86)/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/DTS/Binn/:/mnt/c/Users/haimo/AppData/Local/Programs/Python/Python310/Scripts/:/mnt/c/Users/haimo/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/jetbrains/AppData/Roaming/Python/Python37/Scripts:/mnt/c/Users/haimo/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-6a09154e-3bec-4783-989e-aba7b1af3266.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-e5445e44-efab-4318-9614-026cc9e4805e.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # automatic
 %F = $(notdir $%)
 # environment
 VSCODE_PIPE_LOGGING = true
+# makefile (from 'makefile', line 6)
+CXXVERSION = c++2a
 # environment
-PWD = /home/haimor/b-ball
+PWD = /home/haimor/BasketBall_Game
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/11_interop
+WSL_INTEROP = /run/WSL/2183_interop
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -71,11 +79,15 @@ HOME = /home/haimor
 # environment
 LOGNAME = haimor
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# makefile (from 'makefile', line 14)
+HEADERS = $(wildcard $(SOURCE_PATH)/*.hpp)
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
+# makefile (from 'makefile', line 8)
+OBJECT_PATH = objects
 # environment
 MAKELEVEL := 0
 # default
@@ -83,15 +95,15 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # environment
-SHLVL = 0
+SHLVL = 1
 # default
 MAKE_VERSION := 4.2.1
 # environment
 USER = haimor
 # makefile
-.DEFAULT_GOAL := 
+.DEFAULT_GOAL := run
 # environment
-NAME = DESKTOP-F06T9D8
+NAME = Code
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
@@ -118,8 +130,12 @@ VSCODE_HANDLES_SIGPIPE = true
 MAKEFILES := 
 # automatic
 <F = $(notdir $<)
+# makefile (from 'makefile', line 5)
+CXX = clang++-9
 # environment
 LC_ALL = C
+# makefile (from 'makefile', line 7)
+SOURCE_PATH = sources
 # environment
 HOSTTYPE = x86_64
 # automatic
@@ -130,6 +146,8 @@ SUFFIXES :=
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # default
 .RECIPEPREFIX := 
+# makefile (from 'makefile', line 15)
+OBJECTS = $(subst sources/,objects/,$(subst .cpp,.o,$(SOURCES)))
 # environment
 LANG = C
 # environment
@@ -138,10 +156,10 @@ TERM = xterm-256color
 VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # environment
 WSL_DISTRO_NAME = Ubuntu
-# environment
-MOTD_SHOWN = update-motd
+# makefile (from 'makefile', line 10)
+TIDY_FLAGS = -extra-arg=-std=$(CXXVERSION) -checks=bugprone-*,clang-analyzer-*,cppcoreguidelines-*,performance-*,portability-*,readability-*,-cppcoreguidelines-pro-bounds-pointer-arithmetic,-cppcoreguidelines-owning-memory --warnings-as-errors=*
 # variable set hash-table stats:
-# Load=65/1024=6%, Rehash=0, Collisions=4/87=5%
+# Load=74/1024=7%, Rehash=0, Collisions=4/117=3%
 
 # Pattern-specific Variable Values
 
@@ -149,13 +167,22 @@ MOTD_SHOWN = update-motd
 
 # Directories
 
-# . (device 2064, inode 11729): 18 files, no impossibilities.
+# . (device 2064, inode 83375): 13 files, no impossibilities.
+# sources (device 2064, inode 83869): 12 files, no impossibilities.
 
-# 18 files, no impossibilities in 1 directories.
+# 25 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
-# No implicit rules.
+%.o: %.cpp sources/Game.hpp sources/names.hpp sources/Schedule.hpp sources/Leauge.hpp sources/Team.hpp
+#  recipe to execute (from 'makefile', line 32):
+	$(CXX) $(CXXFLAGS) --compile $< -o $@
+
+objects/%.o: sources/%.cpp sources/Game.hpp sources/names.hpp sources/Schedule.hpp sources/Leauge.hpp sources/Team.hpp
+#  recipe to execute (from 'makefile', line 35):
+	$(CXX) $(CXXFLAGS) --compile $< -o $@
+
+# 2 implicit rules, 0 (0.0%) terminal.
 
 # Files
 
@@ -167,18 +194,67 @@ all:
 #  File has not been updated.
 
 # Not a target:
-Makefile:
-#  Implicit rule search has been done.
-#  File does not exist.
-#  File has been updated.
-#  Failed to be updated.
+objects/Schedule.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Demo.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+demo: Demo.o objects/Team.o objects/simulator.o objects/Game.o objects/Leauge.o objects/Schedule.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 29):
+	$(CXX) $(CXXFLAGS) $^ -o demo
+
+# Not a target:
+Test.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+test: TestCounter.o Test.o objects/Team.o objects/simulator.o objects/Game.o objects/Leauge.o objects/Schedule.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 20):
+	$(CXX) $(CXXFLAGS) $^ -o $@
 
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  File does not exist.
+#  Last modified 2022-06-01 13:17:20.551885978
 #  File has been updated.
-#  Failed to be updated.
+#  Successfully updated.
+
+# Not a target:
+TestCounter.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+objects/Game.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+objects/simulator.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+objects/Leauge.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 .DEFAULT:
@@ -187,28 +263,55 @@ makefile:
 #  File has not been updated.
 
 # Not a target:
-GNUmakefile:
-#  Implicit rule search has been done.
-#  File does not exist.
-#  File has been updated.
-#  Failed to be updated.
+objects/Team.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+run: test
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+ 
+make: *** No rule to make target 'all'.  Stop.
+
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 45):
+	rm -f $(OBJECTS) *.o test* 
+	rm -f StudentTest*.cpp
+
+tidy:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 39):
+	clang-tidy $(SOURCES) $(HEADERS) $(TIDY_FLAGS) --
+
+valgrind: test
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 42):
+	valgrind --tool=memcheck $(VALGRIND_FLAGS) ./test 2>&1 | { egrep "lost| at " || true; }
 
 # files hash-table stats:
-# Load=6/1024=1%, Rehash=0, Collisions=0/15=0%
+# Load=18/1024=2%, Rehash=0, Collisions=1/44=2%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 26 / storage = 242 B / avg = 9 B
-# current buf: size = 8162 B / used = 242 B / count = 26 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 49 / storage = 526 B / avg = 10 B
+# current buf: size = 8162 B / used = 526 B / count = 49 / avg = 10 B
 
-# strcache performance: lookups = 29 / hit rate = 10%
+# strcache performance: lookups = 90 / hit rate = 45%
 # hash-table stats:
-# Load=26/8192=0%, Rehash=0, Collisions=1/29=3%
-# Finished Make data base on Fri May 27 17:28:54 2022
+# Load=49/8192=1%, Rehash=0, Collisions=2/90=2%
+# Finished Make data base on Wed Jun  1 13:20:00 2022
 
  
-make: *** No rule to make target 'all'.  Stop.
-
