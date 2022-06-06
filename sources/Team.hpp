@@ -18,7 +18,7 @@ namespace ariel
  * @param num_of_Shooting_Guard - the number of shooting guars that play in team
  * @param absorb_points - the points that the team absorb
  * @param have_star - if the group have star-1, else -0
- * @param num_of_games - how muve games the team play until now
+ * @param num_of_games - how muce games the team play until now
  */    
 class Team{
     std::string name;
@@ -95,15 +95,15 @@ public:
     /**
      * @brief setter:set team name 
      */
-    void setName(std::string name){this->name = name;}
+    void setName(std::string name);
     /**
      * @brief setter:set wins of the team  
     */
-    void setWins(int num_of_wins){this->wins = num_of_wins;}
+    void setWins(int num_of_wins);
     /**
      * @brief setter:set Losses of team
      */
-    void setLosses(int num_of_losses){this->losses = num_of_losses;}
+    void setLosses(int num_of_losses);
     /**
      * @brief setter:set talent of the team
      */

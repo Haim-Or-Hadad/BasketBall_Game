@@ -17,6 +17,21 @@ using namespace std;
  
  Game::~Game(){}
 
+
+void Game::setScore1(int score){
+    if (score < 0){
+        __throw_invalid_argument("score must be positive number");
+    }
+    this->team1_score += score;
+    }
+
+void Game::setScore2(int score){
+    if (score < 0){
+        __throw_invalid_argument("score must be positive number");
+    }
+    this->team2_score += score;
+    }
+    
  void Game::score_by_height()
  {
      if (team1->getHeight() > team2->getHeight())

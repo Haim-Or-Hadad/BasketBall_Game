@@ -55,13 +55,13 @@ namespace ariel
      /**
      * @brief add score to team1
      */ 
-     void setScore1(int score){this->team1_score += score;}
+     void setScore1(int score);
      /**
       * @brief add score to team2
       * 
       * @param score 
       */
-     void setScore2(int score){this->team2_score += score;}
+     void setScore2(int score);
     
     /*****************************class methods****************************/
     /**

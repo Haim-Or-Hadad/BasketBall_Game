@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Jun  1 13:20:00 2022
+# Make data base, printed on Mon Jun  6 16:43:23 2022
 
 # Variables
 
@@ -57,7 +59,7 @@ PATH = /home/haimor/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-e5445e44-efab-4318-9614-026cc9e4805e.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-4387a601-fdc3-4d03-872e-d5dd36fbd7cd.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # automatic
@@ -71,10 +73,11 @@ PWD = /home/haimor/BasketBall_Game
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/2183_interop
+WSL_INTEROP = /run/WSL/8_interop
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
+ 
 HOME = /home/haimor
 # environment
 LOGNAME = haimor
@@ -101,11 +104,12 @@ MAKE_VERSION := 4.2.1
 # environment
 USER = haimor
 # makefile
-.DEFAULT_GOAL := run
+.DEFAULT_GOAL := test
 # environment
 NAME = Code
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
+ 
 # environment
 VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/haimo/.vscode/extensions/ms-vscode-remote.remote-wsl-0.66.3
 # default
@@ -154,6 +158,7 @@ LANG = C
 TERM = xterm-256color
 # environment
 VSCODE_EXTHOST_WILL_SEND_SOCKET = true
+ 
 # environment
 WSL_DISTRO_NAME = Ubuntu
 # makefile (from 'makefile', line 10)
@@ -167,10 +172,10 @@ TIDY_FLAGS = -extra-arg=-std=$(CXXVERSION) -checks=bugprone-*,clang-analyzer-*,c
 
 # Directories
 
-# . (device 2064, inode 83375): 13 files, no impossibilities.
-# sources (device 2064, inode 83869): 12 files, no impossibilities.
+# . (device 2064, inode 83375): 16 files, no impossibilities.
+# sources (device 2064, inode 83869): 11 files, no impossibilities.
 
-# 25 files, no impossibilities in 2 directories.
+# 27 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -203,9 +208,10 @@ objects/Schedule.o:
 Demo.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
 
-demo: Demo.o objects/Team.o objects/simulator.o objects/Game.o objects/Leauge.o objects/Schedule.o
+demo: Demo.o objects/Team.o objects/Game.o objects/Leauge.o objects/Schedule.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -218,7 +224,7 @@ Test.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-test: TestCounter.o Test.o objects/Team.o objects/simulator.o objects/Game.o objects/Leauge.o objects/Schedule.o
+test: TestCounter.o Test.o objects/Team.o objects/Game.o objects/Leauge.o objects/Schedule.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -228,7 +234,7 @@ test: TestCounter.o Test.o objects/Team.o objects/simulator.o objects/Game.o obj
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-01 13:17:20.551885978
+#  Last modified 2022-06-06 16:42:57.560605247
 #  File has been updated.
 #  Successfully updated.
 
@@ -240,12 +246,6 @@ TestCounter.o:
 
 # Not a target:
 objects/Game.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-objects/simulator.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -268,21 +268,13 @@ objects/Team.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-run: test
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
 clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
- 
-make: *** No rule to make target 'all'.  Stop.
-
 #  File has not been updated.
 #  recipe to execute (from 'makefile', line 45):
 	rm -f $(OBJECTS) *.o test* 
-	rm -f StudentTest*.cpp
+	rm -f demo
 
 tidy:
 #  Implicit rule search has not been done.
@@ -299,19 +291,20 @@ valgrind: test
 	valgrind --tool=memcheck $(VALGRIND_FLAGS) ./test 2>&1 | { egrep "lost| at " || true; }
 
 # files hash-table stats:
-# Load=18/1024=2%, Rehash=0, Collisions=1/44=2%
+# Load=16/1024=2%, Rehash=0, Collisions=1/38=3%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 49 / storage = 526 B / avg = 10 B
-# current buf: size = 8162 B / used = 526 B / count = 49 / avg = 10 B
+# strcache buffers: 1 (0) / strings = 46 / storage = 488 B / avg = 10 B
+# current buf: size = 8162 B / used = 488 B / count = 46 / avg = 10 B
 
-# strcache performance: lookups = 90 / hit rate = 45%
+# strcache performance: lookups = 87 / hit rate = 47%
 # hash-table stats:
-# Load=49/8192=1%, Rehash=0, Collisions=2/90=2%
-# Finished Make data base on Wed Jun  1 13:20:00 2022
+ 
+# Load=46/8192=1%, Rehash=0, Collisions=2/87=2%
+# Finished Make data base on Mon Jun  6 16:43:23 2022
 
  

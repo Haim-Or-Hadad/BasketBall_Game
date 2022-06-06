@@ -21,7 +21,6 @@ namespace ariel
     //////constructor ger leauge////
     Schedule(Leauge leauge);
     /////defualt constructor//////
-    Schedule(){};
 
     ~Schedule(){};
 

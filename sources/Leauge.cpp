@@ -1,7 +1,7 @@
 #include "Leauge.hpp"
 #include "Team.hpp"
 #include <iostream>
-
+#include "algorithm"
 using namespace std;
 namespace ariel
 {
@@ -14,6 +14,8 @@ Leauge::Leauge()
 }
 Leauge::Leauge(std::vector<Team*> curr_teams)
 {
+  srand(time(0));
+  this->all_teams = new vector<Team*>();
     if (curr_teams.size() > 20 )
     {
         throw invalid_argument("leauge have at most 20 teams");
@@ -27,8 +29,20 @@ void Leauge::build_leauge()
     size_t i= 0;
     while (this->all_teams->size() < 20)
     {
-        this->all_teams->push_back(new Team());
+      Team * new_team = new Team();
+      this->all_teams->push_back(new_team);
     }
+    for (size_t i = 0; i < this->all_teams->size()-1; i++)
+    {
+      for (size_t j = i+1; j < this->all_teams->size(); j++)
+      {
+        if( this->all_teams->at(i)->getName() == this->all_teams->at(j)->getName()){
+          __throw_invalid_argument("can't use twice in same name");
+        }
+      }
+      
+    }
+    
 }
 
 void Leauge::complete_leauge(vector<Team*> teams)
@@ -42,9 +56,17 @@ void Leauge::complete_leauge(vector<Team*> teams)
 
 void Leauge::statistics()
 {
+    int num_of_teams =0;
+    scanf("%d", &num_of_teams);
+    for (size_t i = 0; i < num_of_teams; i++)
+    {
+      cout << "team in place " << i << " in leauge: " << *this->all_teams->at(i) << endl;
+    }
     cout << "longest number of wins: " << longest_wins() << endl;
     cout << "longest number of losses: " << longest_losses() << endl;
     cout << "Best points ratio: " << Positive_point_ratio() << endl;
+    cout << "talent of best team: " << this->all_teams->at(0)->getTalent() << endl;
+    cout << "talent of bad team: " << this->all_teams->at(19)->getTalent() << endl;
 }
 
 int Leauge::longest_wins()

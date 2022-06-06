@@ -113,8 +113,12 @@ void Schedule::print_all_games()
 
 void Schedule::print_table()
 {
+  vector<Team*> wins_table = this->leauge->get_all_teams() ;
   sort(this->leauge->get_all_teams().begin(),
-  this->leauge->get_all_teams().end());
+  this->leauge->get_all_teams().end(),
+  [](Team *a, Team *b){
+  return (a->getWins()) > (b->getWins());});
+  
   cout
    << left 
    << setw(25)
@@ -156,8 +160,7 @@ void Schedule::print_table()
     << left 
     << setw(6)
     << team1->get_Points_ratio()
-     << endl;
-
+    << endl;
         }
 }
    

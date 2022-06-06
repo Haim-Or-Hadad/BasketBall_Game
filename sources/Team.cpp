@@ -32,15 +32,49 @@ Team::Team(string name, int wins, int losses, double talent,int height){
     }
 
 Team::Team(string name){
-    this->name = name;
-    this->losses =0;
-    this->wins =0;
-    this->talent = ((double)rand()/(double)RAND_MAX);
+    this->setName(name);
+    this->setLosses(0);
+    this->setWins(0);
+    this->setTalent((double)rand()/(double)RAND_MAX);//talent between 0 to 1
     this->height = rand()%20+10;
     this->num_of_Shooting_Guard = rand()%2+1;
     this->shot_points = 0;
     this->absorb_points =0;
     this->have_star = rand()%2+1;
+    this->num_of_games = 0;
+}
+
+void Team::setName(std::string name){
+    if (name == "")
+    {
+        __throw_invalid_argument("team must have a name");
+    }
+    this->name = name;}
+
+void Team::setWins(int num_of_wins)
+{
+    if ( 38 <= num_of_wins || num_of_wins < 0)
+    {
+        __throw_invalid_argument("any team can reach 38 wins and can't to wins negative numbers");
+    }
+    this->wins = num_of_wins;
+    if ( this->getWins()  > 38)
+    {
+        __throw_invalid_argument("team can't reach more then 38 wins ");
+    }
+}
+
+void Team::setLosses(int num_of_losses)
+{
+    if ( 38 <= num_of_losses || num_of_losses < 0)
+    {
+        __throw_invalid_argument("any team can reach 38 losses and can't to losses negative numbers");
+    }
+    this->losses = num_of_losses;
+    if ( this->getLosses()> 38)
+    {
+        __throw_invalid_argument("team can't reach more then 38 losses ");
+    }
 }
 
 void Team::addWin()
