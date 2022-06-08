@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Jun  6 16:43:23 2022
+# Make data base, printed on Wed Jun  8 21:56:04 2022
 
 # Variables
 
@@ -19,7 +17,7 @@ make: *** No rule to make target 'all'.  Stop.
 # makefile (from 'makefile', line 11)
 VALGRIND_FLAGS = -v --leak-check=full --show-leak-kinds=all  --error-exitcode=99
 # environment
-WSLENV = ELECTRON_RUN_AS_NODE/w:
+WSLENV = VSCODE_WSL_EXT_LOCATION/up
 # default
 .SHELLFLAGS := -c
 # environment
@@ -37,7 +35,7 @@ SHELL = /bin/sh
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
 # environment
-_ = /mnt/c/Users/haimo/AppData/Local/Programs/Microsoft VS Code/bin/code
+_ = /home/haimor/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/node
 # makefile (from 'makefile', line 1)
 MAKEFILE_LIST :=  makefile
 # 'override' directive
@@ -55,11 +53,11 @@ VSCODE_CWD = /mnt/c/Users/haimo/AppData/Local/Programs/Microsoft VS Code
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/haimor/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.UbuntuonWindows_2004.2022.1.0_x64__79rhkp1fndgsc:/mnt/c/Program Files (x86)/VMware/VMware Workstation/bin/:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/Microsoft SQL Server/150/DTS/Binn/:/mnt/c/Program Files/Azure Data Studio/bin:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/Program Files (x86)/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/DTS/Binn/:/mnt/c/Users/haimo/AppData/Local/Programs/Python/Python310/Scripts/:/mnt/c/Users/haimo/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/jetbrains/AppData/Roaming/Python/Python37/Scripts:/mnt/c/Users/haimo/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin
+PATH = /home/haimor/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/VMware/VMware Workstation/bin/:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/Microsoft SQL Server/150/DTS/Binn/:/mnt/c/Program Files/Azure Data Studio/bin:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/Program Files (x86)/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/DTS/Binn/:/mnt/c/Users/haimo/AppData/Local/Programs/Python/Python310/Scripts/:/mnt/c/Users/haimo/AppData/Local/Programs/Python/Python310/:/mnt/c/Program Files (x86)/VMware/VMware Workstation/bin/:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/Microsoft SQL Server/150/DTS/Binn/:/mnt/c/Program Files/Azure Data Studio/bin:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/Program Files (x86)/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/DTS/Binn/:/mnt/c/Users/jetbrains/AppData/Roaming/Python/Python37/Scripts:/mnt/c/Users/haimo/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files/Azure Data Studio/bin:/snap/bin
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-4387a601-fdc3-4d03-872e-d5dd36fbd7cd.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-6e6991b6-305a-47e4-8344-733b8fc3d5db.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # automatic
@@ -73,11 +71,10 @@ PWD = /home/haimor/BasketBall_Game
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/8_interop
+WSL_INTEROP = /run/WSL/11_interop
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
- 
 HOME = /home/haimor
 # environment
 LOGNAME = haimor
@@ -98,7 +95,7 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # environment
-SHLVL = 1
+SHLVL = 0
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -106,10 +103,9 @@ USER = haimor
 # makefile
 .DEFAULT_GOAL := test
 # environment
-NAME = Code
+NAME = DESKTOP-F06T9D8
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
- 
 # environment
 VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/haimo/.vscode/extensions/ms-vscode-remote.remote-wsl-0.66.3
 # default
@@ -158,13 +154,14 @@ LANG = C
 TERM = xterm-256color
 # environment
 VSCODE_EXTHOST_WILL_SEND_SOCKET = true
- 
 # environment
 WSL_DISTRO_NAME = Ubuntu
 # makefile (from 'makefile', line 10)
 TIDY_FLAGS = -extra-arg=-std=$(CXXVERSION) -checks=bugprone-*,clang-analyzer-*,cppcoreguidelines-*,performance-*,portability-*,readability-*,-cppcoreguidelines-pro-bounds-pointer-arithmetic,-cppcoreguidelines-owning-memory --warnings-as-errors=*
+# environment
+MOTD_SHOWN = update-motd
 # variable set hash-table stats:
-# Load=74/1024=7%, Rehash=0, Collisions=4/117=3%
+# Load=75/1024=7%, Rehash=0, Collisions=4/118=3%
 
 # Pattern-specific Variable Values
 
@@ -172,18 +169,18 @@ TIDY_FLAGS = -extra-arg=-std=$(CXXVERSION) -checks=bugprone-*,clang-analyzer-*,c
 
 # Directories
 
-# . (device 2064, inode 83375): 16 files, no impossibilities.
-# sources (device 2064, inode 83869): 11 files, no impossibilities.
+# . (device 2064, inode 83375): 13 files, no impossibilities.
+# sources (device 2064, inode 83869): 15 files, no impossibilities.
 
-# 27 files, no impossibilities in 2 directories.
+# 28 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
-%.o: %.cpp sources/Game.hpp sources/names.hpp sources/Schedule.hpp sources/Leauge.hpp sources/Team.hpp
+%.o: %.cpp sources/Game.hpp sources/load_file.hpp sources/names.hpp sources/statistics.hpp sources/Schedule.hpp sources/Leauge.hpp sources/Team.hpp
 #  recipe to execute (from 'makefile', line 32):
 	$(CXX) $(CXXFLAGS) --compile $< -o $@
 
-objects/%.o: sources/%.cpp sources/Game.hpp sources/names.hpp sources/Schedule.hpp sources/Leauge.hpp sources/Team.hpp
+objects/%.o: sources/%.cpp sources/Game.hpp sources/load_file.hpp sources/names.hpp sources/statistics.hpp sources/Schedule.hpp sources/Leauge.hpp sources/Team.hpp
 #  recipe to execute (from 'makefile', line 35):
 	$(CXX) $(CXXFLAGS) --compile $< -o $@
 
@@ -205,13 +202,18 @@ objects/Schedule.o:
 #  File has not been updated.
 
 # Not a target:
+objects/statistics.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 Demo.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
- 
 #  File has not been updated.
 
-demo: Demo.o objects/Team.o objects/Game.o objects/Leauge.o objects/Schedule.o
+demo: Demo.o objects/Team.o objects/Game.o objects/Leauge.o objects/statistics.o objects/Schedule.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -224,7 +226,7 @@ Test.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-test: TestCounter.o Test.o objects/Team.o objects/Game.o objects/Leauge.o objects/Schedule.o
+test: TestCounter.o Test.o objects/Team.o objects/Game.o objects/Leauge.o objects/statistics.o objects/Schedule.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -234,7 +236,7 @@ test: TestCounter.o Test.o objects/Team.o objects/Game.o objects/Leauge.o object
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-06 16:42:57.560605247
+#  Last modified 2022-06-07 20:14:21.717604101
 #  File has been updated.
 #  Successfully updated.
 
@@ -272,6 +274,9 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+ 
+make: *** No rule to make target 'all'.  Stop.
+
 #  recipe to execute (from 'makefile', line 45):
 	rm -f $(OBJECTS) *.o test* 
 	rm -f demo
@@ -291,20 +296,19 @@ valgrind: test
 	valgrind --tool=memcheck $(VALGRIND_FLAGS) ./test 2>&1 | { egrep "lost| at " || true; }
 
 # files hash-table stats:
-# Load=16/1024=2%, Rehash=0, Collisions=1/38=3%
+# Load=17/1024=2%, Rehash=0, Collisions=1/41=2%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 46 / storage = 488 B / avg = 10 B
-# current buf: size = 8162 B / used = 488 B / count = 46 / avg = 10 B
+# strcache buffers: 1 (0) / strings = 53 / storage = 608 B / avg = 11 B
+# current buf: size = 8162 B / used = 608 B / count = 53 / avg = 11 B
 
-# strcache performance: lookups = 87 / hit rate = 47%
+# strcache performance: lookups = 98 / hit rate = 45%
 # hash-table stats:
- 
-# Load=46/8192=1%, Rehash=0, Collisions=2/87=2%
-# Finished Make data base on Mon Jun  6 16:43:23 2022
+# Load=53/8192=1%, Rehash=0, Collisions=2/98=2%
+# Finished Make data base on Wed Jun  8 21:56:04 2022
 
  

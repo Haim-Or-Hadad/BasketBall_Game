@@ -13,7 +13,7 @@
 #include "Team.hpp"
 #include "Leauge.hpp"
 #include "Schedule.hpp"
-
+#include "statistics.hpp"
 #include <exception>
 #include  <algorithm>
 using namespace ariel;
@@ -60,10 +60,15 @@ int main() {
     //print all the games of the season
 	cout << season2 << endl;
 	season2.play_season();
-	season2.print_table();
-	le2.statistics();
+	
 
+	statistics stat{season2};
+	//stat.print_games_result();
+	cout << stat << endl;
 
+	Leauge load_le{};
+	//load_le.load_file();
+	//cout << load_le << endl;
 
 	
 }

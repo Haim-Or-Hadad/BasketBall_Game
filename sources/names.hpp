@@ -1,40 +1,10 @@
-#ifndef ROLE_H
-#define ROLE_H
-#include "vector"
-#include "string"
+#pragma once
+
+#include <vector>
+#include <string>
 
 namespace ariel
 {
-static std::vector<std::string> names=
-{"Noah",
-"Amelia",
-"Oliver",
-"Olivia",
-"George",
-"Isla",
-"Leo",
-"Ava",
-"Theo",
-"Freya",
-"Arthur",
-"Mia",
-"Freddi",
-"Willow",
-"Harry",
-"Evie",
-"Charli",
-"Lilly",
-"Jack",
-"Grace"
-};
-    
-static std::vector<std::string> roles = 
-{"Point_Guard",
-"Shooting_Guard",
-"Small_Forward",
-"Power_Forward",
-"Center"};
-
 static std::vector<std::string> Group_names =
 {"Net_Rippers",
 "Basket_Hounds",
@@ -59,5 +29,3 @@ static std::vector<std::string> Group_names =
 "maccabi"};
 
  };
-
-#endif

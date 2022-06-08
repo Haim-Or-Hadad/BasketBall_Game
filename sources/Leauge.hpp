@@ -1,7 +1,8 @@
-#ifndef Leauge_H
-#define Leauge_H
- #include "Team.hpp"
+#pragma once 
 
+#include "iostream"
+#include "Team.hpp"
+#include <fstream>
 
 namespace ariel
 {
@@ -9,39 +10,47 @@ class Leauge
 {
 private:
     std::vector<Team*> *all_teams;
-    int year;
-    //Team *best_team;
-
 public:
     /*****League constructor******/
-    Leauge(std::vector<Team*> curr_teams);
+    Leauge(std::vector<Team*> & curr_teams);
     /*****defualt constructor*****/
     Leauge();
 
     ~Leauge(){};
 
-    /******inline getters*********/
+    /******getters*********/
     std::vector<Team*> &get_all_teams(){return *this->all_teams;}
-    int get_year_of_leauge(){return this->year;}
-    //Team & get_best_team(){return *this->best_team;}
 
     /******inline setters********/
     void set_teams(std::vector<Team*> *teams){this->all_teams = teams;}
-    void set_year_of_leauge(int curr_year){this->year = curr_year;}
     //void set_best_team(Team *t){this->best_team = t;}
 
     /****simulate new full leaugue****/
     void build_leauge();
-    void complete_leauge(std::vector<Team*> teams);
-    ////////////////
-    void statistics();
-    int longest_wins();
-    int longest_losses();
-    int  Positive_point_ratio();
+    void complete_leauge(std::vector<Team*> *teams);
+    
+//     void load_file(){
+//         std::ifstream fin;
+//         fin.open("input.txt", ios::app);
+//         fin.read(all_teams, sizeof(team));
+//         while (!fin.eof()) {
+//         Team * team;
+//         fin.read((char*)&team, sizeof(team));
+//     }
+//         if (!fin) {
+//         //std::cout << "Error in opening the file" << std::endl;
+//         //return 1; // if this is main
+//         }
+//         while (fin) {
+//         std::string name = "h";
+//         fin >> name;
+//         std::cout << name << std::endl;
+//         Team temp{name};
+//         all_teams->push_back(&temp);
+// }
 
-    //friend bool operator<( Team &s1,  Team &s2);
+    //}
      friend std::ostream &operator<<(std::ostream &output,  Leauge &Leauge);
 };
 
 };
-#endif

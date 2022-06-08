@@ -1,5 +1,12 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/haimor/BasketBall_Game'
-make: 'test' is up to date.
+clang++-9 -std=c++2a -Werror -Wsign-conversion -Isources --compile TestCounter.cpp -o TestCounter.o
+clang++-9 -std=c++2a -Werror -Wsign-conversion -Isources --compile Test.cpp -o Test.o
+clang++-9 -std=c++2a -Werror -Wsign-conversion -Isources --compile sources/Team.cpp -o objects/Team.o
+clang++-9 -std=c++2a -Werror -Wsign-conversion -Isources --compile sources/Game.cpp -o objects/Game.o
+clang++-9 -std=c++2a -Werror -Wsign-conversion -Isources --compile sources/Leauge.cpp -o objects/Leauge.o
+clang++-9 -std=c++2a -Werror -Wsign-conversion -Isources --compile sources/statistics.cpp -o objects/statistics.o
+clang++-9 -std=c++2a -Werror -Wsign-conversion -Isources --compile sources/Schedule.cpp -o objects/Schedule.o
+clang++-9 -std=c++2a -Werror -Wsign-conversion -Isources TestCounter.o Test.o objects/Team.o objects/Game.o objects/Leauge.o objects/statistics.o objects/Schedule.o -o test
 make: Leaving directory '/home/haimor/BasketBall_Game'
  
