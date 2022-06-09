@@ -24,52 +24,56 @@ using namespace ariel;
 using namespace std;
 
 int main() {
-	/********TEAM 1********/
-	Team team_1{"maccabi"};
+	Team maccabi{"maccabi"};
+	Team hapoel{"hapoel"};
+	Team zafrir{"zafrir"};
 
-	/********TEAM 2********/
-	Team team_2{"Hapoel"};
+	vector<Team*> team_list;
+	team_list.push_back(&maccabi);
+	team_list.push_back(&hapoel);
+	team_list.push_back(&zafrir);
 
-	//Game first_game{team_1,team_2};
-	//first_game.play();
-	//cout << first_game << endl;
+	//BUILD NEW FULL LEAUGE///
+	Leauge leauge{team_list};
+	Schedule season{leauge};
+	statistics stat{season};
 
-	// //BUILD NEW FULL LEAUGE///
-	// Leauge le1{};
-		
-	// Schedule season{le1};
-	
-	// //print all the games of the season
-	// cout << season << endl;
-	// //operate play of all the games
-	// season.play_season();	
+	int choice;
+	while (1)
+	{
+	 	cout << "0) Exit" << endl;
+		cout << "1) print team list" << endl;
+		cout << "2) print schedule" << endl;
+		cout << "3) play all season" << endl;
+		cout << "4) show all results" << endl;
+		cout << "5) show statistics" << endl;
+		cout << "Your choice : ";
+		cin >> choice;
+		cout << "*****************************************************" << endl;
+		switch (choice){
+		case 0:
+			cout << "bye bye until next season" << endl;
+			return 0;
+		case 1:
+			cout << leauge << endl;
+		break;
+		case 2:
+			cout << season << endl;
+			break;
+		case 3:
+			season.play_season();
+			break;
+		case 4:
+			stat.print_games_result();
+			break;
+		case 5:
+			cout << stat << endl;
+			break;
+		default:
+			cout << "Wrong choice, please try again..." << endl;
+		}
+	}
+	cout << "*****************************************************" << endl;
 
-	// //season.print_teamlist();
-	// season.print_table();
-	
-	// //prints statistec
-	// le1.statistics();
-
-	//PUT TEAM1 AND TEAM2 IN VECTOR
-	vector<Team*> team_list = {&team_1,&team_2};
-	Leauge le2{team_list};
-	cout << le2 << endl;
-
-	//create a schedule to leauge 2
-	Schedule season2{le2};
-    //print all the games of the season
-	cout << season2 << endl;
-	season2.play_season();
-	
-
-	statistics stat{season2};
-	//stat.print_games_result();
-	cout << stat << endl;
-
-	Leauge load_le{};
-	//load_le.load_file();
-	//cout << load_le << endl;
-
-	
 }
 	

@@ -11,7 +11,7 @@ const int _3 = 3;
 const int _13 = 13;
 const int _19 = 19;
 const int _17 = 17;
-const int forbidden_score = 55;
+const int forbidden_score = 50;
 
  namespace ariel
  {
@@ -117,11 +117,11 @@ void Game::determine_game()
      }
      if (getScore1() < forbidden_score)
      {
-         this->setScore1(forbidden_score-getScore1());
+         this->setScore1(forbidden_score-getScore1() + _10);//because home team score must be greater that 55
      }
     if (getScore2() < forbidden_score)
      {
-         this->setScore1(forbidden_score-getScore2());
+         this->setScore2(forbidden_score-getScore2());
      }
 }
 void Game::score_teams(int x , int y , int z , int t){
@@ -129,6 +129,11 @@ void Game::score_teams(int x , int y , int z , int t){
     this->setScore2(rand()%z+t);
 }
  void Game::play(){
+     if (this->getScore1() > 0 || this->getScore2() >0)
+     {
+         __throw_invalid_argument("The game has already played");
+     }
+     
      // add points by Group data
      this->score_by_height();
      this->score_by_talent();

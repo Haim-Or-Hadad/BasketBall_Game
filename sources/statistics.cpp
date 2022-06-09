@@ -127,13 +127,13 @@ double statistics::talent_of_bad_team(){
     for (size_t j = 0; j < 10; j++)
       {
         cout << "round: " << i << " " << "game: " << j << endl;
-        cout << this->schedule->get_rounds()[j][i]->getTeam1().getName();
+        cout << this->schedule->get_rounds()[i][j]->getTeam1().getName();
         cout << "  vs  " ;
-        cout << this->schedule->get_rounds()[j][i]->getTeam2().getName();
+        cout << this->schedule->get_rounds()[i][j]->getTeam2().getName();
         cout << endl;
-        cout <<"   " <<this->schedule->get_rounds()[j][i]->getScore1() ;
+        cout <<"   " <<this->schedule->get_rounds()[i][j]->getScore1() ;
         cout << "                 " ;
-        cout << this->schedule->get_rounds()[j][i]->getScore2() ;
+        cout << this->schedule->get_rounds()[i][j]->getScore2() ;
         cout << endl << endl;
 
 
@@ -142,6 +142,7 @@ double statistics::talent_of_bad_team(){
 }
 
 ostream &operator<<(std::ostream &output,  statistics &stat){
+    stat.sort_table_by_wins();
    output
    << left 
    << setw(for_table_25)

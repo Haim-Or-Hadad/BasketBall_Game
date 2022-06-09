@@ -31,6 +31,9 @@ Leauge::Leauge(std::vector<Team*> & curr_teams)
 
 void Leauge::build_leauge()
 {
+    if(this->all_teams->size() >= teams_size ){
+      __throw_invalid_argument("The league has already been built");   
+    } 
     size_t i= 0;
     while (this->all_teams->size() < teams_size)
     {

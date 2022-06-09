@@ -13,7 +13,7 @@ Team::Team(): Team(Group_names.at(myvar++%teams_size)){}
     
 
 Team::Team(string const & name){
-    this->name = name;
+    this->setName(name);
     this->losses = 0;
     this->wins = 0;
     this->talent = ((double)rand()/(double)RAND_MAX);//talent between 0 to 1
