@@ -1,5 +1,7 @@
 #include "Game.hpp" 
 #include <iostream>
+#include <random>
+#include <cmath>
 
 
 using namespace std;
@@ -9,9 +11,11 @@ const int _8 = 8;
 const int _9 = 9;
 const int _3 = 3;
 const int _13 = 13;
-const int _19 = 19;
-const int _17 = 17;
 const int forbidden_score = 50;
+random_device rd{};
+mt19937 gen{rd()};
+normal_distribution<> home{73,8.8};
+normal_distribution<> out{72,8.7};
 
  namespace ariel
  {
@@ -26,60 +30,28 @@ const int forbidden_score = 50;
  
  Game::~Game(){}
 
-
-    
- void Game::score_by_height()
- {
-     if (team1->getHeight() > team2->getHeight())
-     {
-         score_teams(_11 , _10 , _9 ,_8);
-     }
-     else
-     {
-         score_teams(_9 , _8 , _11 ,_10);
-     }
- }
-
  void Game::score_by_talent()
     {     
     if (team1->getTalent() > team2->getTalent())
      {
-         score_teams(_13 , _11 , _9 ,_3);
+         score_teams(_9 , _8 , _8 ,_3);
      }
      else
      {
-         score_teams(_13 , _11 , _9 ,_3);
+         score_teams(_9 , _8 , _8 ,_3);
      }   
     }
 
-void Game::score_homeGame()
-{
-    score_teams(_11 , _10 , _10 ,_9);
-}
-
-void Game::num_of_Shooting_Guard()
-{
-    if (team1->get_shooting() > team2->get_shooting())
-    {
-        score_teams(_19 , _17 , _10 ,_8);
-    }
-    else
-    {
-        score_teams(_17 , _13 , _10 ,_8);
-    }
-    
-    
-}
 
 void Game::score_by_winning()
 {
     if (team1->getWins() > team2->getWins())
     {
-        this->setScore1(_8);
+        this->setScore1(_3);
     }
     else
     {
-        this->setScore2(_8);
+        this->setScore2(_3);
     }  
 }
 
@@ -97,23 +69,13 @@ void Game::score_by_moral()
     
 }
 
-void Game::score_star_team()
-{
-    if(team1->star())
-    {
-        this->setScore1(_8);
-    }
-    if(team2->star())
-    {
-        this->setScore2(_8);
-    }
-}
 
 void Game::determine_game()
 {
      if (getScore1() == getScore2())
      {
-         team1->star() ? this->setScore1(_3) : this->setScore2(_3);
+         this->setScore1(_3);
+         this->setScore2(_3);
      }
      if (getScore1() < forbidden_score)
      {
@@ -128,39 +90,29 @@ void Game::score_teams(int x , int y , int z , int t){
     this->setScore1(rand()%x+y);
     this->setScore2(rand()%z+t);
 }
+
  void Game::play(){
      if (this->getScore1() > 0 || this->getScore2() >0)
      {
          __throw_invalid_argument("The game has already played");
      }
-     
-     // add points by Group data
-     this->score_by_height();
+     //add points by Group data
+     this->setScore1(round(home(gen)));
+     this->setScore2(round(out(gen)));
      this->score_by_talent();
-     this->score_homeGame();
-     this->num_of_Shooting_Guard();
      this->score_by_winning();
-     this->score_star_team();
      this->score_by_moral();
-     team1->set_points(getScore1());
-     team2->set_points(getScore2());
-     team1->set_absorb_points(getScore2());
-     team2->set_absorb_points(getScore1());
+     team1->set_points(getScore1(), getScore2());
+     team2->set_points(getScore2(), getScore1());
      this->determine_game();
      if (getScore1() > getScore2())
      {
-         //looser = team2;
-         /*****team 1*********/
         team1->setWins(1);
-        /*****team 2*********/
         team2->setLosses(1);
      }
      else 
      {
-         //looser = team1;
-        /*****team 2*********/
-         team2->setWins(1);
-        /*****team 1*********/
+        team2->setWins(1);
         team1->setLosses(1);
      }
          

@@ -86,35 +86,15 @@ namespace ariel
     
     /*****************************class methods****************************/
     /**
-     *@brief add score between 10-11 to the heighest team 
-     * and 7-8 to other team
-     */
-    void score_by_height();
-    /**
      * @brief add score between 12-13 to the talenter team
      * and 10-11 to other team
      */
     void score_by_talent();
     /**
-     * @brief add score between 10-11 to the home team
-     * and 9-11 to out team
-     */
-    void score_homeGame();
-    /**
-     * @brief add score between 17-19 to team that have more num_of_Shooting_Guard
-     * and 16-17 to other team
-     */
-    void num_of_Shooting_Guard();
-    /**
      * @brief team that have more winning get more score
      * 
      */
     void score_by_winning();
-    /**
-     * @brief get score to the team with star
-     * 
-     */
-    void score_star_team();
     /**
      * @brief check wich team have more seq of wins  
      */
