@@ -10,6 +10,8 @@ int const for_table_25 = 25;
 int const for_table_6 = 6;
 int const for_table_7 = 7;
 const int num_of_teams = 20;
+const int num_of_rounds = 38;
+const int games_in_round = 10;
 
 namespace ariel
 {
@@ -17,7 +19,7 @@ statistics::statistics(Schedule & schedule)
 {
 this->schedule = &schedule;
 this->table_end_season = &this->schedule->get_Leauge().get_all_teams();
-this->sort_table_by_wins();
+this->sort_wins_points();
 init_names();
 }
 
@@ -32,12 +34,16 @@ for (size_t i = 0; i < num_of_teams; i++)
 }
 }
 
-void statistics::sort_table_by_wins()
+void statistics::sort_wins_points()
 {
 sort(this->table_end_season->begin(),
 this->table_end_season->end(),
 [](Team *a, Team *b){
 return (a->getWins()) > (b->getWins());});
+sort(this->table_end_season->begin(),
+this->table_end_season->end(),
+[](Team *a, Team *b){
+return (a->get_Points_ratio()) > (b->get_Points_ratio());});
 }
 
 vector<Team*> & statistics::get_table(){
@@ -113,18 +119,12 @@ for (size_t i = 0; i < num_of_teams; i++)
   return to_return;    
 }  
 
- double statistics::talent_of_best_team(){
-     return this->table_end_season->at(0)->getTalent();
- }
-double statistics::talent_of_bad_team(){
-    return this->table_end_season->at(num_of_teams-1)->getTalent();
-}
 
   void statistics::print_games_result()
   {
-  for (size_t i = 0; i < 38; i++)
+  for (size_t i = 0; i < num_of_rounds; i++)
     {
-    for (size_t j = 0; j < 10; j++)
+    for (size_t j = 0; j < games_in_round; j++)
       {
         cout << "round: " << i << " " << "game: " << j << endl;
         cout << this->schedule->get_rounds()[i][j]->getTeam1().getName();
@@ -142,7 +142,7 @@ double statistics::talent_of_bad_team(){
 }
 
 ostream &operator<<(std::ostream &output,  statistics &stat){
-    stat.sort_table_by_wins();
+    stat.sort_wins_points();
    output
    << left 
    << setw(for_table_25)
@@ -187,8 +187,8 @@ ostream &operator<<(std::ostream &output,  statistics &stat){
     }
     output << "The longest winning streak: " << stat.get_longest_wins() << endl;
     output << "The longest lossing streak: " << stat.get_longest_losses() << endl;
-    output << "talent of best team: " << stat.talent_of_best_team() << endl; 
-    output << "talent of bad team: " << stat.talent_of_bad_team() << endl; 
+    output << "talent of best team: " <<stat.table_end_season->at(0)->getTalent() << endl; 
+    output << "talent of bad team: " << stat.table_end_season->at(num_of_teams-1)->getTalent() << endl; 
     return output;
 }
 };

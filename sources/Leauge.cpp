@@ -48,9 +48,7 @@ void Leauge::build_leauge()
           __throw_invalid_argument("can't use twice in same name");
         }
       }
-      
     }
-    
 }
 
 void Leauge::complete_leauge(vector<Team*> * teams)
@@ -62,6 +60,16 @@ void Leauge::complete_leauge(vector<Team*> * teams)
     this->build_leauge();
 }
 
+//getter
+vector<Team*> & Leauge::get_all_teams()
+{
+  return *this->all_teams;
+}
+//setter
+ void Leauge::set_teams(std::vector<Team*> *teams)
+ {
+  this->all_teams = teams;
+ }
 
  ostream &operator<<(std::ostream &output,  Leauge &leauge)
  {

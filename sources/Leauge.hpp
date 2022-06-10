@@ -6,6 +6,10 @@
 
 namespace ariel
 {
+/**
+ * @brief This class creates a new leauge with 20 new teams 
+ * @param all_teams - vector that contains all the teams
+ */
 class Leauge
 {
 private:
@@ -19,38 +23,22 @@ public:
     ~Leauge(){};
 
     /******getters*********/
-    std::vector<Team*> &get_all_teams(){return *this->all_teams;}
+    std::vector<Team*> &get_all_teams();
 
-    /******inline setters********/
-    void set_teams(std::vector<Team*> *teams){this->all_teams = teams;}
-    //void set_best_team(Team *t){this->best_team = t;}
+    /******setters********/
+    void set_teams(std::vector<Team*> *teams);
 
     /****simulate new full leaugue****/
+    /**
+     * @brief build new leauge with 20 new teams 
+     * */
     void build_leauge();
+    /**
+     * @brief if numbers of teams in leauge is under than 20 so the finc conmmplete to 20
+     */
     void complete_leauge(std::vector<Team*> *teams);
-    
-//     void load_file(){
-//         std::ifstream fin;
-//         fin.open("input.txt", ios::app);
-//         fin.read(all_teams, sizeof(team));
-//         while (!fin.eof()) {
-//         Team * team;
-//         fin.read((char*)&team, sizeof(team));
-//     }
-//         if (!fin) {
-//         //std::cout << "Error in opening the file" << std::endl;
-//         //return 1; // if this is main
-//         }
-//         while (fin) {
-//         std::string name = "h";
-//         fin >> name;
-//         std::cout << name << std::endl;
-//         Team temp{name};
-//         all_teams->push_back(&temp);
-// }
-
-    //}
-     friend std::ostream &operator<<(std::ostream &output,  Leauge &Leauge);
+    /******operator*********/
+    friend std::ostream &operator<<(std::ostream &output,  Leauge &Leauge);
 };
 
 };

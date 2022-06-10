@@ -27,15 +27,7 @@ namespace ariel
      Game(Team & home_team, Team & outside_team);
      /******Game destructor******/
      ~Game();
-    //  //move constructor
-    //  Game(Game &&) noexcept;
-    //  //copy constructor
-    //  Game(Game & game){
-    //     this->team1 = game.team1;
-    //     this->team2 = game.team2;
-    //     this->team1_score = game.getScore1();
-    //     this->team2_score = game.getScore2();
-    //  }
+
      /**************************getters******************************/
      /**
       * @brief return pointer to team 1
@@ -90,11 +82,7 @@ namespace ariel
      * and 10-11 to other team
      */
     void score_by_talent();
-    /**
-     * @brief team that have more winning get more score
-     * 
-     */
-    void score_by_winning();
+
     /**
      * @brief check wich team have more seq of wins  
      */

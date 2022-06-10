@@ -64,7 +64,22 @@ namespace ariel
       }
   }
 
+  //getters
+  vector<Game*> & Schedule::get_games_list()
+  {
+  return *games_list;
+  }
 
+  Leauge & Schedule::get_Leauge()
+  {
+  return *this->leauge;
+  }
+
+  std::map<int,std::vector<Game*>> & Schedule::get_rounds()
+  {
+    return *this->round_games;
+  }
+  
   ostream &operator<<(std::ostream &output,  Schedule &schedule)
     {
       for (size_t i = 0; i < rounds_size; i++)

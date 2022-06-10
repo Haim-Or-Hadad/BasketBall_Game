@@ -10,6 +10,13 @@
 
 namespace ariel
 {
+  /**
+ * @brief This class creates a new schedule to the leauge 
+ * @param round_games - map of vectors any key is num of round in season so there are 
+ * 38 keys and to any key have 10 games in round because we have 20 teams.
+ * @param games_list - list of the 380 games in season
+ * @param leauge - leauge
+ */
   class Schedule
   {
   private:
@@ -30,9 +37,18 @@ namespace ariel
 
 
     /*****getters********/
-    std::vector<Game*> & get_games_list(){return *games_list;}
-    Leauge & get_Leauge(){return *this->leauge;}
-    std::map<int,std::vector<Game*>> &get_rounds(){return *round_games;}
+    /**
+     * @brief return games list 
+     */
+    std::vector<Game*> & get_games_list();
+      /**
+     * @brief return leauge
+     */
+    Leauge & get_Leauge();
+      /**
+     * @brief return map of vectors
+     */
+    std::map<int,std::vector<Game*>> &get_rounds();
       
     /**
     * @brief play all the games of the season

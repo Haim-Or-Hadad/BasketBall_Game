@@ -18,7 +18,7 @@ Team::Team(string const & name){
     this->wins = 0;
     this->talent = ((double)rand()/(double)RAND_MAX);//talent between 0 to 1
     this->shot_points = 0;
-    this->absorb_points =0;
+    this->absorb_points = 0;
 }
 
 ////////////////////////getters//////////////////////////

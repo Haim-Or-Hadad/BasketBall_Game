@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jun  9 21:53:52 2022
+# Make data base, printed on Fri Jun 10 09:07:08 2022
 
 # Variables
 
@@ -17,7 +19,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # makefile (from 'makefile', line 11)
 VALGRIND_FLAGS = -v --leak-check=full --show-leak-kinds=all  --error-exitcode=99
 # environment
-WSLENV = VSCODE_WSL_EXT_LOCATION/up:VSCODE_SERVER_TAR/up
+WSLENV = VSCODE_WSL_EXT_LOCATION/up
 # default
 .SHELLFLAGS := -c
 # environment
@@ -57,9 +59,7 @@ PATH = /home/haimor/.vscode-server/bin/4af164ea3a06f701fe3e89a2bcbb421d2026b68f/
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-7fff882d-34f2-4dcd-8368-e794d568b279.sock
-# environment
-VSCODE_SERVER_TAR = /mnt/c/Users/haimo/AppData/Local/Temp/vscode-remote-wsl/4af164ea3a06f701fe3e89a2bcbb421d2026b68f/vscode-server-stable-linux-x64.tar.gz
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-6a272e6f-e73e-4573-9b3f-aed97a4f7d65.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # automatic
@@ -73,7 +73,7 @@ PWD = /home/haimor/BasketBall_Game
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/6150_interop
+WSL_INTEROP = /run/WSL/11_interop
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -160,6 +160,8 @@ VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 WSL_DISTRO_NAME = Ubuntu
 # makefile (from 'makefile', line 10)
 TIDY_FLAGS = -extra-arg=-std=$(CXXVERSION) -checks=bugprone-*,clang-analyzer-*,cppcoreguidelines-*,performance-*,portability-*,readability-*,-cppcoreguidelines-pro-bounds-pointer-arithmetic,-cppcoreguidelines-owning-memory --warnings-as-errors=*
+# environment
+MOTD_SHOWN = update-motd
 # variable set hash-table stats:
 # Load=75/1024=7%, Rehash=0, Collisions=4/118=3%
 
@@ -169,18 +171,18 @@ TIDY_FLAGS = -extra-arg=-std=$(CXXVERSION) -checks=bugprone-*,clang-analyzer-*,c
 
 # Directories
 
-# . (device 2064, inode 83375): 16 files, no impossibilities.
-# sources (device 2064, inode 83869): 15 files, no impossibilities.
+# . (device 2064, inode 83375): 11 files, no impossibilities.
+# sources (device 2064, inode 83869): 14 files, no impossibilities.
 
-# 31 files, no impossibilities in 2 directories.
+# 25 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
-%.o: %.cpp sources/Game.hpp sources/names.hpp sources/statistics.hpp sources/Schedule.hpp sources/generator.hpp sources/Leauge.hpp sources/Team.hpp
+%.o: %.cpp sources/Game.hpp sources/names.hpp sources/statistics.hpp sources/Schedule.hpp sources/Leauge.hpp sources/Team.hpp
 #  recipe to execute (from 'makefile', line 32):
 	$(CXX) $(CXXFLAGS) --compile $< -o $@
 
-objects/%.o: sources/%.cpp sources/Game.hpp sources/names.hpp sources/statistics.hpp sources/Schedule.hpp sources/generator.hpp sources/Leauge.hpp sources/Team.hpp
+objects/%.o: sources/%.cpp sources/Game.hpp sources/names.hpp sources/statistics.hpp sources/Schedule.hpp sources/Leauge.hpp sources/Team.hpp
 #  recipe to execute (from 'makefile', line 35):
 	$(CXX) $(CXXFLAGS) --compile $< -o $@
 
@@ -202,12 +204,6 @@ objects/Schedule.o:
 #  File has not been updated.
 
 # Not a target:
-objects/generator.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
 objects/statistics.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -219,7 +215,7 @@ Demo.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-demo: Demo.o objects/Team.o objects/Game.o objects/Leauge.o objects/statistics.o objects/Schedule.o objects/generator.o
+demo: Demo.o objects/Team.o objects/Game.o objects/Leauge.o objects/statistics.o objects/Schedule.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -232,7 +228,7 @@ Test.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-test: TestCounter.o Test.o objects/Team.o objects/Game.o objects/Leauge.o objects/statistics.o objects/Schedule.o objects/generator.o
+test: TestCounter.o Test.o objects/Team.o objects/Game.o objects/Leauge.o objects/statistics.o objects/Schedule.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -273,9 +269,6 @@ objects/Leauge.o:
 # Not a target:
 objects/Team.o:
 #  Implicit rule search has not been done.
- 
-make: *** No rule to make target 'all'.  Stop.
-
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -287,6 +280,7 @@ clean:
 	rm -f $(OBJECTS) *.o test* 
 	rm -f demo
 
+ 
 tidy:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -302,19 +296,19 @@ valgrind: test
 	valgrind --tool=memcheck $(VALGRIND_FLAGS) ./test 2>&1 | { egrep "lost| at " || true; }
 
 # files hash-table stats:
-# Load=18/1024=2%, Rehash=0, Collisions=1/44=2%
+# Load=17/1024=2%, Rehash=0, Collisions=1/41=2%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 54 / storage = 632 B / avg = 11 B
-# current buf: size = 8162 B / used = 632 B / count = 54 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 51 / storage = 566 B / avg = 11 B
+# current buf: size = 8162 B / used = 566 B / count = 51 / avg = 11 B
 
-# strcache performance: lookups = 103 / hit rate = 47%
+# strcache performance: lookups = 91 / hit rate = 43%
 # hash-table stats:
-# Load=54/8192=1%, Rehash=0, Collisions=2/103=2%
-# Finished Make data base on Thu Jun  9 21:53:52 2022
+# Load=51/8192=1%, Rehash=0, Collisions=2/91=2%
+# Finished Make data base on Fri Jun 10 09:07:08 2022
 
  

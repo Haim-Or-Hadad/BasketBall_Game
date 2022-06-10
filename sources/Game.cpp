@@ -5,12 +5,11 @@
 
 
 using namespace std;
-const int _11 = 11;
+
 const int _10 = 10;
 const int _8 = 8;
 const int _9 = 9;
 const int _3 = 3;
-const int _13 = 13;
 const int forbidden_score = 50;
 random_device rd{};
 mt19937 gen{rd()};
@@ -42,19 +41,6 @@ normal_distribution<> out{72,8.7};
      }   
     }
 
-
-void Game::score_by_winning()
-{
-    if (team1->getWins() > team2->getWins())
-    {
-        this->setScore1(_3);
-    }
-    else
-    {
-        this->setScore2(_3);
-    }  
-}
-
 void Game::score_by_moral()
 {
     if (team1->getWins() > team2->getWins())
@@ -70,13 +56,8 @@ void Game::score_by_moral()
 }
 
 
-void Game::determine_game()
+void Game::determine_game()//if scores are equals
 {
-     if (getScore1() == getScore2())
-     {
-         this->setScore1(_3);
-         this->setScore2(_3);
-     }
      if (getScore1() < forbidden_score)
      {
          this->setScore1(forbidden_score-getScore1() + _10);//because home team score must be greater that 55
@@ -100,11 +81,14 @@ void Game::score_teams(int x , int y , int z , int t){
      this->setScore1(round(home(gen)));
      this->setScore2(round(out(gen)));
      this->score_by_talent();
-     this->score_by_winning();
-     this->score_by_moral();
+     if (getScore1() == getScore2())
+     {
+        this->score_by_moral();
+     }
+    this->determine_game();
      team1->set_points(getScore1(), getScore2());
      team2->set_points(getScore2(), getScore1());
-     this->determine_game();
+    
      if (getScore1() > getScore2())
      {
         team1->setWins(1);
