@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Jun 10 09:07:08 2022
+# Make data base, printed on Sat Jun 11 18:52:44 2022
 
 # Variables
 
@@ -19,7 +19,7 @@ make: *** No rule to make target 'all'.  Stop.
 # makefile (from 'makefile', line 11)
 VALGRIND_FLAGS = -v --leak-check=full --show-leak-kinds=all  --error-exitcode=99
 # environment
-WSLENV = VSCODE_WSL_EXT_LOCATION/up
+WSLENV = ELECTRON_RUN_AS_NODE/w:
 # default
 .SHELLFLAGS := -c
 # environment
@@ -37,7 +37,7 @@ SHELL = /bin/sh
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
 # environment
-_ = /home/haimor/.vscode-server/bin/4af164ea3a06f701fe3e89a2bcbb421d2026b68f/node
+_ = /mnt/c/Users/haimo/AppData/Local/Programs/Microsoft VS Code/bin/code
 # makefile (from 'makefile', line 1)
 MAKEFILE_LIST :=  makefile
 # 'override' directive
@@ -55,11 +55,11 @@ VSCODE_CWD = /mnt/c/Users/haimo/AppData/Local/Programs/Microsoft VS Code
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/haimor/.vscode-server/bin/4af164ea3a06f701fe3e89a2bcbb421d2026b68f/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/VMware/VMware Workstation/bin/:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/Microsoft SQL Server/150/DTS/Binn/:/mnt/c/Program Files/Azure Data Studio/bin:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/Program Files (x86)/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/DTS/Binn/:/mnt/c/Users/haimo/AppData/Local/Programs/Python/Python310/Scripts/:/mnt/c/Users/haimo/AppData/Local/Programs/Python/Python310/:/mnt/c/Program Files (x86)/VMware/VMware Workstation/bin/:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/Microsoft SQL Server/150/DTS/Binn/:/mnt/c/Program Files/Azure Data Studio/bin:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/Program Files (x86)/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/DTS/Binn/:/mnt/c/Users/jetbrains/AppData/Roaming/Python/Python37/Scripts:/mnt/c/Users/haimo/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files/Azure Data Studio/bin:/snap/bin
+PATH = /home/haimor/.vscode-server/bin/4af164ea3a06f701fe3e89a2bcbb421d2026b68f/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.UbuntuonWindows_2004.2022.1.0_x64__79rhkp1fndgsc:/mnt/c/Program Files (x86)/VMware/VMware Workstation/bin/:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/Microsoft SQL Server/150/DTS/Binn/:/mnt/c/Program Files/Azure Data Studio/bin:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/Program Files (x86)/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/DTS/Binn/:/mnt/c/Users/haimo/AppData/Local/Programs/Python/Python310/Scripts/:/mnt/c/Users/haimo/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/jetbrains/AppData/Roaming/Python/Python37/Scripts:/mnt/c/Users/haimo/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-6a272e6f-e73e-4573-9b3f-aed97a4f7d65.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-708df33c-bfa7-4506-acb7-a65c3772954f.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # automatic
@@ -73,7 +73,7 @@ PWD = /home/haimor/BasketBall_Game
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/11_interop
+WSL_INTEROP = /run/WSL/8_interop
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -97,7 +97,7 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # environment
-SHLVL = 0
+SHLVL = 1
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -105,7 +105,7 @@ USER = haimor
 # makefile
 .DEFAULT_GOAL := test
 # environment
-NAME = DESKTOP-F06T9D8
+NAME = Code
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
@@ -160,10 +160,8 @@ VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 WSL_DISTRO_NAME = Ubuntu
 # makefile (from 'makefile', line 10)
 TIDY_FLAGS = -extra-arg=-std=$(CXXVERSION) -checks=bugprone-*,clang-analyzer-*,cppcoreguidelines-*,performance-*,portability-*,readability-*,-cppcoreguidelines-pro-bounds-pointer-arithmetic,-cppcoreguidelines-owning-memory --warnings-as-errors=*
-# environment
-MOTD_SHOWN = update-motd
 # variable set hash-table stats:
-# Load=75/1024=7%, Rehash=0, Collisions=4/118=3%
+# Load=74/1024=7%, Rehash=0, Collisions=4/117=3%
 
 # Pattern-specific Variable Values
 
@@ -171,10 +169,10 @@ MOTD_SHOWN = update-motd
 
 # Directories
 
-# . (device 2064, inode 83375): 11 files, no impossibilities.
-# sources (device 2064, inode 83869): 14 files, no impossibilities.
+# . (device 2064, inode 83375): 16 files, no impossibilities.
+# sources (device 2064, inode 83869): 13 files, no impossibilities.
 
-# 25 files, no impossibilities in 2 directories.
+# 29 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -280,8 +278,8 @@ clean:
 	rm -f $(OBJECTS) *.o test* 
 	rm -f demo
 
- 
 tidy:
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -303,12 +301,12 @@ valgrind: test
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 51 / storage = 566 B / avg = 11 B
-# current buf: size = 8162 B / used = 566 B / count = 51 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 50 / storage = 562 B / avg = 11 B
+# current buf: size = 8162 B / used = 562 B / count = 50 / avg = 11 B
 
-# strcache performance: lookups = 91 / hit rate = 43%
+# strcache performance: lookups = 95 / hit rate = 47%
 # hash-table stats:
-# Load=51/8192=1%, Rehash=0, Collisions=2/91=2%
-# Finished Make data base on Fri Jun 10 09:07:08 2022
+# Load=50/8192=1%, Rehash=0, Collisions=2/95=2%
+# Finished Make data base on Sat Jun 11 18:52:44 2022
 
  

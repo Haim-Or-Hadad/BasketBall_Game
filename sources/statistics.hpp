@@ -24,7 +24,14 @@ private:
 public:
     /********defualt*********/
     statistics(Schedule & schedule);
-
+    // Copy  constructor.
+    statistics(const statistics &statistics);
+    // Copy Assignment Operator.
+    statistics & operator=(const statistics &other_stat);
+    // Move Constructor.
+    statistics (statistics &&) = default;	
+    // Move assignment Operator.
+    statistics& operator=(statistics&& statistics) = default;
     ~statistics(){};
     /**
      * @brief init the names of the teams in long_wins and long_losses maps
@@ -39,15 +46,7 @@ public:
     /**
      * @brief Get the longest seq object
      */
-    int get_longest_seq(int flag);
-    /**
-     * @brief Get the longest wins object
-     */
-    int get_longest_wins();
-    /**
-     * @brief Get the longest losses object
-     */
-    int get_longest_losses();
+    std::pair<int, int> get_longest_seq();
     /**
      * @brief Get the Best points ratio object
      */

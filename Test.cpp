@@ -16,6 +16,7 @@
 #include "sources/Team.hpp"
 #include "sources/Leauge.hpp"
 #include "sources/Schedule.hpp"
+#include "sources/statistics.hpp"
 
 using namespace std;
 using namespace ariel;
@@ -149,5 +150,4 @@ TEST_CASE("Scheedule"){
     
     
 }
-
 

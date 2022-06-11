@@ -1,8 +1,8 @@
 #pragma once 
 
 
-#include "names.hpp"
-
+// #include "names.hpp"
+#include <string>
 
 namespace ariel
 {
@@ -30,6 +30,15 @@ public:
     Team();
     /*****Team constructor with name****/
     Team(std::string const & name);
+    // Copy  Operator.
+    Team(const Team &other_team);
+    // Copy Assignment Operator.
+    Team & operator=(const Team &other_team);
+    // Move Constructor.
+    Team (Team &&) = default;	
+    // Move assignment Operator.
+    Team& operator=(Team&& other) = default;
+
     /*********Team destructor**********/
     ~Team(){};
 

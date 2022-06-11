@@ -20,20 +20,22 @@ namespace ariel
   class Schedule
   {
   private:
-    std::map<int,std::vector<Game*>> *round_games;
-    std::vector<Game*> *games_list;
+    std::map<int,std::vector<Game*>> round_games;
+    std::vector<Game*> games_list;
     Leauge *leauge;
   public:
     //////constructor ger leauge////
     Schedule(Leauge & leauge);
-    /////defualt constructor//////
+    // Copy  constructor.
+    Schedule(const Schedule &schedule);
+    // Copy Assignment Operator.
+    Schedule & operator=(const Schedule &schedule);
+    // Move Constructor.
+    Schedule (Schedule &&) = default;	
+    // Move assignment Operator.
+    Schedule& operator=(Schedule&& schedule) = default;
 
-    ~Schedule(){
-      for (size_t i = 0; i < this->games_list->size(); i++)
-      {
-        delete this->games_list->at(i);
-      }
-    };
+    ~Schedule(){};
 
 
     /*****getters********/

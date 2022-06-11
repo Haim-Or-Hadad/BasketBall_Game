@@ -7,38 +7,45 @@
 using namespace std;
 
 const int _10 = 10;
-const int _8 = 8;
-const int _9 = 9;
+const int _4 = 4;
+const int _6 = 6;
 const int _3 = 3;
-const int forbidden_score = 50;
+const int forbidden_score_50 = 50;
+const int forbidden_score_100 = 100;
+const int mean = 72;
+const double Standard_Deviation1 = 8.8;
+const double Standard_Deviation2 = 8.7;
+
 random_device rd{};
 mt19937 gen{rd()};
-normal_distribution<> home{73,8.8};
-normal_distribution<> out{72,8.7};
+normal_distribution<> home{mean,Standard_Deviation1};
+normal_distribution<> out{mean,Standard_Deviation2};
 
  namespace ariel
  {
 
- Game::Game(Team & home_team, Team & outside_team)
- {
-     this->team1= &home_team;
-     this->team2 = &outside_team;
-     this->team1_score = 0;
-     this->team2_score = 0;
- }
- 
+ Game::Game(Team & home_team, Team & outside_team) : team1(&home_team),
+                                                     team2(&outside_team),
+                                                    team1_score(0),
+                                                    team2_score(0),
+                                                    game_played(false){}
+
+// Copy constructor.
+ Game::Game(const Game &other_game) : team1(other_game.team1),
+                                team2(other_game.team2),
+                                team1_score(other_game.getScore1()),
+                                team2_score(other_game.getScore2()),
+                                game_played(other_game.game_played){}
+
+
  Game::~Game(){}
 
  void Game::score_by_talent()
     {     
-    if (team1->getTalent() > team2->getTalent())
-     {
-         score_teams(_9 , _8 , _8 ,_3);
-     }
-     else
-     {
-         score_teams(_9 , _8 , _8 ,_3);
-     }   
+    if (team1->getTalent() > team2->getTalent()){
+         score_teams(_6 , _4 , _4 ,_3);}
+    else{
+         score_teams(_4 , _3 , _6 ,_4);}   
     }
 
 void Game::score_by_moral()
@@ -56,17 +63,18 @@ void Game::score_by_moral()
 }
 
 
-void Game::determine_game()//if scores are equals
+void Game::determine_game()
 {
-     if (getScore1() < forbidden_score)
+     if (getScore1() < forbidden_score_50)
      {
-         this->setScore1(forbidden_score-getScore1() + _10);//because home team score must be greater that 55
+         this->setScore1(forbidden_score_50-getScore1() + _10);//because home team score must be greater that 55
      }
-    if (getScore2() < forbidden_score)
+    if (getScore2() < forbidden_score_50)
      {
-         this->setScore2(forbidden_score-getScore2());
+         this->setScore2(forbidden_score_50-getScore2());
      }
 }
+
 void Game::score_teams(int x , int y , int z , int t){
     this->setScore1(rand()%x+y);
     this->setScore2(rand()%z+t);
@@ -77,9 +85,10 @@ void Game::score_teams(int x , int y , int z , int t){
      {
          __throw_invalid_argument("The game has already played");
      }
+     this->set_played();
      //add points by Group data
-     this->setScore1(round(home(gen)));
-     this->setScore2(round(out(gen)));
+     this->setScore1(int(round(home(gen))));
+     this->setScore2(int(round(out(gen))));
      this->score_by_talent();
      if (getScore1() == getScore2())
      {
@@ -125,8 +134,22 @@ int Game::getScore2() const
 {
 return this->team2_score;
 }
-Team & Game::getWinner(){
-return *this->winner;
+Team & Game::winner() const {
+if (getScore1() > getScore2()){
+   return *team1; 
+}
+return *team2;
+}
+
+Team & Game::looser() const {
+if (getScore1() > getScore2()){
+   return *team2; 
+}
+return *team1;
+}
+
+bool Game::played() const{
+    return this->game_played;
 }
 /************************setters**************************/
 void Game::setTeam1(Team & team_1)
@@ -155,9 +178,24 @@ if (score < 0){
 this->team2_score += score;
 }
 
-void Game::setWinner(Team & team){
-this->winner = &team;
+
+void  Game::set_played(){
+this->game_played = true;
 }
+
+
+
+// Copy Assignment Operator.
+Game & Game::operator=(const Game &other_game){
+    Game game(other_game);
+    this->team1 = &game.getTeam1();
+    this->team2 = &game.getTeam2();
+    this->team1_score = game.getScore1();
+    this->team2_score = game.getScore2();
+    this->game_played = game.game_played;
+    return *this;
+}
+
 
  ostream &operator<<(ostream &output,  Game &game)
  {

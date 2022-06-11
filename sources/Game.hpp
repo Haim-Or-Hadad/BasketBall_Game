@@ -13,18 +13,26 @@ namespace ariel
  * @param team2:team 2 details
  * @param team1_score: score of team 1 in current game
  * @param team2_score: score of team 2 in current game
- * @param winner : set winner of the game
  */
  private:
      Team *team1;
      Team *team2;
-     Team *winner;
      int team1_score;
      int team2_score;
+    bool game_played;
      
  public:
+
      /*****Game constructor******/
      Game(Team & home_team, Team & outside_team);
+    // Copy  constructor.
+    Game(const Game &other_game);
+    // Copy Assignment Operator.
+    Game & operator=(const Game &other_game);
+    // Move Constructor.
+    Game (Game &&) = default;	
+    // Move assignment Operator.
+    Game& operator=(Game&& other) = default;
      /******Game destructor******/
      ~Game();
 
@@ -37,6 +45,14 @@ namespace ariel
       * @brief return pointer to team 2
       */ 
      Team & getTeam2() const;
+      /**
+      * @brief return pointer to winner team
+      */ 
+     Team & winner() const;
+          /**
+      * @brief return pointer to looser team
+      */ 
+     Team & looser() const;
      /**
       * @brief return the score of team 1
       */ 
@@ -45,12 +61,11 @@ namespace ariel
      * @brief return the score of team 2
      */ 
      int getScore2() const;
-        /**
-      * @brief get the winner team
+     /**
+      * @brief return true if game played , else return false
       * 
       */
-     Team & getWinner();
-
+     bool played() const;
      /************************setters**************************/
      /**
      * @brief set team1 to be team_1 by refernce
@@ -70,12 +85,11 @@ namespace ariel
       * @param score 
       */
      void setScore2(int score);
-     /**
-      * @brief set the winner team
-      * 
-      */
-     void setWinner(Team * team);
-    
+    /**
+     * @brief change the game to played
+     * 
+     */
+    void set_played();
     /*****************************class methods****************************/
     /**
      * @brief add score between 12-13 to the talenter team
@@ -111,12 +125,6 @@ namespace ariel
 
     /*****operators******/
     friend std::ostream &operator<<(std::ostream &output,  Game &game);
-    Game& operator=(const Game& game);//{
-    //     this->team1 = game.team1;
-    //     this->team2 = game.team2;
-    //     this->team1_score = game.getScore1();
-    //     this->team2_score = game.getScore2();
-    // }
     
  };
 };

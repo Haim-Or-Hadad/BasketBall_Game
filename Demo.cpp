@@ -45,8 +45,8 @@ int main() {
 	cout << "---------------------------------------" << endl;
 
 	//full season with teams that i give them the names and random teams of constructor
-	Team a{"a"};
-	Team b{"b"};
+	Team a{"hapoel"};
+	Team b{"maccabi"};
 	Team c{"c"};
 	Team d{"d"};
 	vector<Team*> my_team_list1 = {&a,&b,&c,&d};
@@ -69,6 +69,9 @@ int main() {
 	for (size_t i = 0; i < 10; i++)
 	{
 		season2.get_rounds().at(0).at(i)->play();
+		season2.get_rounds().at(1).at(i)->play();
+		season2.get_rounds().at(2).at(i)->play();
+		season2.get_rounds().at(3).at(i)->play();
 	}
 	statistics stat2{season2};
 	cout << "######## stat after one game:########" << endl;
@@ -92,7 +95,7 @@ int main() {
 	Schedule season{leauge};
 	statistics stat{season};
 
-	int choice;
+	// int choice;
 	// while (1)
 	// {
 	//  	cout << "0) Exit" << endl;
