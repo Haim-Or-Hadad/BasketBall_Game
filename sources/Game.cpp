@@ -3,7 +3,6 @@
 #include <random>
 #include <cmath>
 
-
 using namespace std;
 
 const int _10 = 10;
@@ -11,15 +10,12 @@ const int _4 = 4;
 const int _6 = 6;
 const int _3 = 3;
 const int forbidden_score_50 = 50;
-const int forbidden_score_100 = 100;
+const int forbidden__home_score_55 = 55;
 const int mean = 72;
-const double Standard_Deviation1 = 8.8;
-const double Standard_Deviation2 = 8.7;
-
+const double Standard_Deviation1 = 8.5;
 random_device rd{};
 mt19937 gen{rd()};
-normal_distribution<> home{mean,Standard_Deviation1};
-normal_distribution<> out{mean,Standard_Deviation2};
+normal_distribution<> normal_dist{mean,Standard_Deviation1};
 
  namespace ariel
  {
@@ -38,15 +34,6 @@ normal_distribution<> out{mean,Standard_Deviation2};
                                 game_played(other_game.game_played){}
 
 
- Game::~Game(){}
-
- void Game::score_by_talent()
-    {     
-    if (team1->getTalent() > team2->getTalent()){
-         score_teams(_6 , _4 , _4 ,_3);}
-    else{
-         score_teams(_4 , _3 , _6 ,_4);}   
-    }
 
 void Game::score_by_moral()
 {
@@ -65,32 +52,38 @@ void Game::score_by_moral()
 
 void Game::determine_game()
 {
-     if (getScore1() < forbidden_score_50)
+     if (getScore1() < forbidden__home_score_55)
      {
-         this->setScore1(forbidden_score_50-getScore1() + _10);//because home team score must be greater that 55
+         this->setScore1(forbidden__home_score_55-getScore1() + _10);//because home team score must be greater that 55
      }
     if (getScore2() < forbidden_score_50)
      {
          this->setScore2(forbidden_score_50-getScore2());
      }
+
 }
 
 void Game::score_teams(int x , int y , int z , int t){
     this->setScore1(rand()%x+y);
     this->setScore2(rand()%z+t);
 }
-
+double rand_score(){
+        while (true) {
+            double number = round(normal_dist(gen));
+            if (number >= 55 && number <= 100)
+                return number;
+        }
+}
  void Game::play(){
-     if (this->getScore1() > 0 || this->getScore2() >0)
+     if (played())
      {
          __throw_invalid_argument("The game has already played");
      }
      this->set_played();
      //add points by Group data
-     this->setScore1(int(round(home(gen))));
-     this->setScore2(int(round(out(gen))));
-     this->score_by_talent();
-     if (getScore1() == getScore2())
+     this->setScore1(int(rand_score()));
+     this->setScore2(int(rand_score()));
+     if (getScore1() == getScore2())//if scores are equals
      {
         this->score_by_moral();
      }
@@ -108,10 +101,6 @@ void Game::score_teams(int x , int y , int z , int t){
         team2->setWins(1);
         team1->setLosses(1);
      }
-         
-     
-     
-        
  }
 
 /**************************getters******************************/
@@ -182,8 +171,6 @@ this->team2_score += score;
 void  Game::set_played(){
 this->game_played = true;
 }
-
-
 
 // Copy Assignment Operator.
 Game & Game::operator=(const Game &other_game){

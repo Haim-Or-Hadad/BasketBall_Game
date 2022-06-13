@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Jun 11 18:52:44 2022
+# Make data base, printed on Mon Jun 13 12:02:28 2022
 
 # Variables
 
@@ -59,7 +57,7 @@ PATH = /home/haimor/.vscode-server/bin/4af164ea3a06f701fe3e89a2bcbb421d2026b68f/
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-708df33c-bfa7-4506-acb7-a65c3772954f.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-4a665a0f-431b-4dfa-bd9a-43220f2b88e4.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # automatic
@@ -73,7 +71,7 @@ PWD = /home/haimor/BasketBall_Game
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/8_interop
+WSL_INTEROP = /run/WSL/11_interop
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -160,8 +158,10 @@ VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 WSL_DISTRO_NAME = Ubuntu
 # makefile (from 'makefile', line 10)
 TIDY_FLAGS = -extra-arg=-std=$(CXXVERSION) -checks=bugprone-*,clang-analyzer-*,cppcoreguidelines-*,performance-*,portability-*,readability-*,-cppcoreguidelines-pro-bounds-pointer-arithmetic,-cppcoreguidelines-owning-memory --warnings-as-errors=*
+# environment
+MOTD_SHOWN = update-motd
 # variable set hash-table stats:
-# Load=74/1024=7%, Rehash=0, Collisions=4/117=3%
+# Load=75/1024=7%, Rehash=0, Collisions=4/118=3%
 
 # Pattern-specific Variable Values
 
@@ -170,17 +170,17 @@ TIDY_FLAGS = -extra-arg=-std=$(CXXVERSION) -checks=bugprone-*,clang-analyzer-*,c
 # Directories
 
 # . (device 2064, inode 83375): 16 files, no impossibilities.
-# sources (device 2064, inode 83869): 13 files, no impossibilities.
+# sources (device 2064, inode 83869): 12 files, no impossibilities.
 
-# 29 files, no impossibilities in 2 directories.
+# 28 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
-%.o: %.cpp sources/Game.hpp sources/names.hpp sources/statistics.hpp sources/Schedule.hpp sources/Leauge.hpp sources/Team.hpp
+%.o: %.cpp sources/Game.hpp sources/statistics.hpp sources/Schedule.hpp sources/Leauge.hpp sources/Team.hpp
 #  recipe to execute (from 'makefile', line 32):
 	$(CXX) $(CXXFLAGS) --compile $< -o $@
 
-objects/%.o: sources/%.cpp sources/Game.hpp sources/names.hpp sources/statistics.hpp sources/Schedule.hpp sources/Leauge.hpp sources/Team.hpp
+objects/%.o: sources/%.cpp sources/Game.hpp sources/statistics.hpp sources/Schedule.hpp sources/Leauge.hpp sources/Team.hpp
 #  recipe to execute (from 'makefile', line 35):
 	$(CXX) $(CXXFLAGS) --compile $< -o $@
 
@@ -277,9 +277,11 @@ clean:
 #  recipe to execute (from 'makefile', line 45):
 	rm -f $(OBJECTS) *.o test* 
 	rm -f demo
+ 
+make: *** No rule to make target 'all'.  Stop.
+
 
 tidy:
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -301,12 +303,12 @@ valgrind: test
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 50 / storage = 562 B / avg = 11 B
-# current buf: size = 8162 B / used = 562 B / count = 50 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 48 / storage = 534 B / avg = 11 B
+# current buf: size = 8162 B / used = 534 B / count = 48 / avg = 11 B
 
-# strcache performance: lookups = 95 / hit rate = 47%
+# strcache performance: lookups = 90 / hit rate = 46%
 # hash-table stats:
-# Load=50/8192=1%, Rehash=0, Collisions=2/95=2%
-# Finished Make data base on Sat Jun 11 18:52:44 2022
+# Load=48/8192=1%, Rehash=0, Collisions=2/90=2%
+# Finished Make data base on Mon Jun 13 12:02:28 2022
 
  

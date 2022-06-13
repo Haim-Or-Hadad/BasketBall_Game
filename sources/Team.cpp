@@ -20,8 +20,9 @@ namespace ariel
 {
 Team::Team() : Team((Group_names.at(myvar++%TEAMS_SIZE))){}
     
-Team::Team(string const & name) : name(name),losses(0),wins(0),talent((double)rand()/(double)RAND_MAX),
-                                    shot_points(0),absorb_points(0){
+Team::Team(string const & name) : name(name),losses(0),wins(0),
+                                  talent((double)rand()/(double)RAND_MAX),
+                                  shot_points(0),absorb_points(0){
     if (name.empty())
     {
         __throw_invalid_argument("team must have a name");
@@ -97,7 +98,7 @@ void Team::setLosses(int  num_of_losses)
     this->losses += num_of_losses;
     if ( this->getLosses()> ROUNDS_SIZE)
     {
-        __throw_invalid_argument("team can't reach more then 38 losses ");
+        __throw_invalid_argument("team can't reach more than 38 losses ");
     }
 }
 

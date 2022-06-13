@@ -21,12 +21,6 @@ public:
     Leauge();
     // Copy  constructor.
     Leauge(const Leauge &other_leauge);
-    // Copy Assignment Operator.
-    Leauge & operator=(const Leauge &other_leauge);
-    // Move Constructor.
-    Leauge (Leauge &&) = default;	
-    // Move assignment Operator.
-    Leauge& operator=(Leauge&& other_leauge) = default;
 
     ~Leauge(){};
 
@@ -42,10 +36,12 @@ public:
      * */
     void build_leauge();
     /**
-     * @brief if numbers of teams in leauge is under than 20 so the finc conmmplete to 20
+     * @brief if numbers of teams in leauge is under than 20 so the func complete to 20
      */
     void complete_leauge(std::vector<Team*> *teams);
     /******operator*********/
+    // Copy Assignment Operator.
+    Leauge & operator=(const Leauge &other_leauge);
     friend std::ostream &operator<<(std::ostream &output,  Leauge &Leauge);
 };
 

@@ -32,6 +32,7 @@ this->schedule = statistics.schedule;
 this->table_end_season = statistics.table_end_season;
 }
 
+//init the names of the teams in keys of long_wins and long_losses maps
 void statistics::init_names(){
 for (size_t i = 0; i < TEAMS_SIZE; i++)
 {
@@ -43,8 +44,7 @@ for (size_t i = 0; i < TEAMS_SIZE; i++)
 }
 }
 
-/*sort the table of teams by wins and points ratio
-*/
+//sort the table of teams by wins and points ratio
 void statistics::sort_wins_points()
 {
 sort(this->table_end_season->begin(),
@@ -89,9 +89,8 @@ for (size_t i = 0; i < ROUNDS_SIZE; i++)
     this->long_wins.at(game->looser().getName()) = 0;
     this->long_loss.at(game->winner().getName()) = 0;
     }
-        }
+    }
 }
-
 return make_pair(seq_of_wins, seq_of_loss);
 }
 
@@ -134,8 +133,6 @@ return to_return;
       }
   }
 }
-
-
 
 // Copy Assignment Operator.
 statistics & statistics::operator=(const statistics &other_stat){
@@ -199,6 +196,16 @@ ostream &operator<<(std::ostream &output,  statistics &stat){
     output << "The longest lossing streak of: " << sequence.second << endl;
     output << "talent of best team: " <<stat.table_end_season->at(0)->getTalent() << endl; 
     output << "talent of bad team: " << stat.table_end_season->at(TEAMS_SIZE-1)->getTalent() << endl; 
+    //get paremeter from user of numbers of teams to show 
+    // int team_to_print;
+    // cout << "enter number of leading teams you want to see please " << endl;  
+    // cin >> team_to_print;
+    // size_t i = 0;
+    // while (i < team_to_print)
+    // {
+    //     output << i+1 << ": "<< *stat.get_table().at(i) << endl;
+    //     i++;
+    // }
     return output;
 }
 };

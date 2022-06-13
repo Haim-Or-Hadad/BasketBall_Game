@@ -1,14 +1,11 @@
 #pragma once 
 
-
-// #include "names.hpp"
 #include <string>
 
 namespace ariel
 {
 /**
- * @brief This class creates a new team with random data of team height, talent, number of shots the team has,
- * if the team have a star.
+ * @brief This class creates a new team with random data of team talent, number of shots the team has,
  * The team also includes a balance of  victories and losses during the season, as well as points it has 
  * scored and those it has absorbed.
  * @param name - name of the group
@@ -32,12 +29,6 @@ public:
     Team(std::string const & name);
     // Copy  Operator.
     Team(const Team &other_team);
-    // Copy Assignment Operator.
-    Team & operator=(const Team &other_team);
-    // Move Constructor.
-    Team (Team &&) = default;	
-    // Move assignment Operator.
-    Team& operator=(Team&& other) = default;
 
     /*********Team destructor**********/
     ~Team(){};
@@ -81,7 +72,8 @@ public:
      */
     void set_points(int  num, int num2);
     /***************************** Team operators*************************/
-    bool operator ==(Team & t);
+    // Copy Assignment Operator.
+    Team & operator=(const Team &other_team);
     friend std::ostream& operator<<(std::ostream& output,Team & team);
     
     };

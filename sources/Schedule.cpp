@@ -68,14 +68,9 @@ namespace ariel
       {
       for (size_t j = 0; j < games_in_round; j++)
         {
-          try
-          {
+
             this->round_games.at(i).at(j)->play();
-          }
-          catch(const std::exception& e)
-          {
-            std::cerr << "the game played" << '\n';
-          }
+
         }
       }
   }

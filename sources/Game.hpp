@@ -27,14 +27,8 @@ namespace ariel
      Game(Team & home_team, Team & outside_team);
     // Copy  constructor.
     Game(const Game &other_game);
-    // Copy Assignment Operator.
-    Game & operator=(const Game &other_game);
-    // Move Constructor.
-    Game (Game &&) = default;	
-    // Move assignment Operator.
-    Game& operator=(Game&& other) = default;
      /******Game destructor******/
-     ~Game();
+     ~Game(){};
 
      /**************************getters******************************/
      /**
@@ -91,13 +85,7 @@ namespace ariel
      */
     void set_played();
     /*****************************class methods****************************/
-    /**
-     * @brief add score between 12-13 to the talenter team
-     * and 10-11 to other team
-     */
-    void score_by_talent();
-
-    /**
+    /*
      * @brief check wich team have more seq of wins  
      */
     void score_by_moral();
@@ -124,6 +112,8 @@ namespace ariel
 
 
     /*****operators******/
+    // Copy Assignment Operator.
+    Game & operator=(const Game &other_game);
     friend std::ostream &operator<<(std::ostream &output,  Game &game);
     
  };

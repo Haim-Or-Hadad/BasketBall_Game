@@ -26,13 +26,10 @@ public:
     statistics(Schedule & schedule);
     // Copy  constructor.
     statistics(const statistics &statistics);
-    // Copy Assignment Operator.
-    statistics & operator=(const statistics &other_stat);
-    // Move Constructor.
-    statistics (statistics &&) = default;	
-    // Move assignment Operator.
-    statistics& operator=(statistics&& statistics) = default;
+
     ~statistics(){};
+
+    ////////////////////////////class methods////////////////////////
     /**
      * @brief init the names of the teams in long_wins and long_losses maps
      * 
@@ -44,11 +41,11 @@ public:
      */
     void sort_wins_points();
     /**
-     * @brief Get the longest seq object
+     * @brief Get a pair of longest seq of wins and losses
      */
     std::pair<int, int> get_longest_seq();
     /**
-     * @brief Get the Best points ratio object
+     * @brief Get the Best points ratio 
      */
     int get_Best_points_ratio();
     /**
@@ -63,6 +60,9 @@ public:
      */
     std::vector<Team*> & get_table();
 
+    /*****operators*****/
+    // Copy Assignment Operator.
+    statistics & operator=(const statistics &other_stat);
     friend std::ostream &operator<<(std::ostream &output,  statistics &stat);
 
 };

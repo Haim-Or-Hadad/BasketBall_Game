@@ -45,10 +45,10 @@ int main() {
 	cout << "---------------------------------------" << endl;
 
 	//full season with teams that i give them the names and random teams of constructor
-	Team a{"hapoel"};
-	Team b{"maccabi"};
-	Team c{"c"};
-	Team d{"d"};
+	Team a{"Hapoel"};
+	Team b{"Maccabi"};
+	Team c{"Nazeret"};
+	Team d{"Beer_Sheva"};
 	vector<Team*> my_team_list1 = {&a,&b,&c,&d};
 	Leauge leauge1{my_team_list1};
 	cout << "######## leauge table with wins and losses:########" << endl;
@@ -63,7 +63,7 @@ int main() {
 	cout << stat1 << endl;
 	cout << "---------------------------------------" << endl;
 
-	//check the stat after one round
+	//check the stat after four round
 	Leauge leauge2{};
 	Schedule season2{leauge2};
 	for (size_t i = 0; i < 10; i++)
@@ -95,41 +95,41 @@ int main() {
 	Schedule season{leauge};
 	statistics stat{season};
 
-	// int choice;
-	// while (1)
-	// {
-	//  	cout << "0) Exit" << endl;
-	// 	cout << "1) print team list" << endl;
-	// 	cout << "2) print schedule" << endl;
-	// 	cout << "3) play all season" << endl;
-	// 	cout << "4) show all results" << endl;
-	// 	cout << "5) show statistics" << endl;
-	// 	cout << "Your choice : ";
-	// 	cin >> choice;
-	// 	cout << "*****************************************************" << endl;
-	// 	switch (choice){
-	// 	case 0:
-	// 		cout << "bye bye until next season" << endl;
-	// 		return 0;
-	// 	case 1:
-	// 		cout << leauge << endl;
-	// 	break;
-	// 	case 2:
-	// 		cout << season << endl;
-	// 		break;
-	// 	case 3:
-	// 		season.play_season();
-	// 		break;
-	// 	case 4:
-	// 		stat.print_games_result();
-	// 		break;
-	// 	case 5:
-	// 		cout << stat << endl;
-	// 		break;
-	// 	default:
-	// 		cout << "Wrong choice, please try again..." << endl;
-	// 	}
-	// }
-	// cout << "*****************************************************" << endl;
+	int choice;
+	while (1)
+	{
+	 	cout << "0) Exit" << endl;
+		cout << "1) print team list" << endl;
+		cout << "2) print schedule" << endl;
+		cout << "3) play all season" << endl;
+		cout << "4) show all results" << endl;
+		cout << "5) show statistics" << endl;
+		cout << "Your choice : ";
+		cin >> choice;
+		cout << "*****************************************************" << endl;
+		switch (choice){
+		case 0:
+			cout << "bye bye until next season" << endl;
+			return 0;
+		case 1:
+			cout << leauge << endl;
+		break;
+		case 2:
+			cout << season << endl;
+			break;
+		case 3:
+			season.play_season();
+			break;
+		case 4:
+			stat.print_games_result();
+			break;
+		case 5:
+			cout << stat << endl;
+			break;
+		default:
+			cout << "Wrong choice, please try again..." << endl;
+		}
+	}
+	cout << "*****************************************************" << endl;
 }
 	

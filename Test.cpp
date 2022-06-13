@@ -75,20 +75,23 @@ TEST_CASE("Team"){
 }
 
 TEST_CASE("Game"){
-Team my_team{"haim_team"};
-Team other_team{"other_team"};
-Game first_game{my_team,other_team};
-//team score must be positive numbers
-CHECK_THROWS(first_game.setScore1(-3));
-CHECK_NOTHROW(first_game.setScore1(0));
-CHECK_THROWS(first_game.setScore2(-7));
-CHECK_NOTHROW(first_game.setScore1(0));
-first_game.play();
-CHECK(first_game.getScore1() >= 50);//check score greater than 50
-CHECK(first_game.getScore2() >= 50);//check score greater than 50
-CHECK(first_game.getScore1() <= 100);//check score smaller than than 100
-CHECK(first_game.getScore2() <= 100);//check score smaller than than 100
-CHECK(first_game.getScore1() >= 55);//check home team score greater that 55
+    Team my_team{"haim_team"};
+    Team other_team{"other_team"};
+    Game first_game{my_team,other_team};
+    
+    //team score must be positive numbers
+    CHECK_THROWS(first_game.setScore1(-3));
+    CHECK_NOTHROW(first_game.setScore1(0));
+    CHECK_THROWS(first_game.setScore2(-7));
+    CHECK_NOTHROW(first_game.setScore1(0));
+    size_t i =0;
+    //while(i<1000){
+    //first_game.play();
+    // CHECK(first_game.getScore1() >= 55);//check home team score greater that 55
+    // CHECK(first_game.getScore2() >= 50);//check score greater than 50
+    // CHECK(first_game.getScore1() <= 100);//check score smaller than than 100
+    // CHECK(first_game.getScore2() <= 100);//check score smaller than than 100
+    // i++;}
 }
 
 TEST_CASE("leauge"){
@@ -127,10 +130,15 @@ TEST_CASE("Scheedule"){
         CHECK_EQ(season.get_rounds().at(i).size() , 10);//check any round have 10 games
     }
     CHECK_THROWS(season.get_Leauge().build_leauge());//The league has already been built
-    season.play_season();
+    //season.play_season();
+
     for (size_t i = 0; i < 380; i++)
     {
-    CHECK_THROWS(season.get_games_list().at(i)->play());//The game has already played
+    season.get_games_list().at(i)->play();//The game has already played
+    CHECK(season.get_games_list().at(i)->getScore1() >= 55);//check home team score greater that 55
+    CHECK(season.get_games_list().at(i)->getScore2() >= 50);//check score greater than 50
+    CHECK(season.get_games_list().at(i)->getScore1() <= 100);//check score smaller than than 100
+    CHECK(season.get_games_list().at(i)->getScore2() <= 100);//check score smaller than than 100
     }
     //string name = season.get_games_list().at(0)->getTeam1().getName();
     for (size_t i = 0; i < 38; i++)

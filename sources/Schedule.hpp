@@ -28,15 +28,8 @@ namespace ariel
     Schedule(Leauge & leauge);
     // Copy  constructor.
     Schedule(const Schedule &schedule);
-    // Copy Assignment Operator.
-    Schedule & operator=(const Schedule &schedule);
-    // Move Constructor.
-    Schedule (Schedule &&) = default;	
-    // Move assignment Operator.
-    Schedule& operator=(Schedule&& schedule) = default;
 
     ~Schedule(){};
-
 
     /*****getters********/
     /**
@@ -51,7 +44,7 @@ namespace ariel
      * @brief return map of vectors
      */
     std::map<int,std::vector<Game*>> &get_rounds();
-      
+    /*****************************class methods****************************/
     /**
     * @brief play all the games of the season
       * 
@@ -62,10 +55,11 @@ namespace ariel
     * 
     */
     void init_games();
-
+    /*****operators******/
+    // Copy Assignment Operator.
+    Schedule & operator=(const Schedule &schedule);
     friend std::ostream &operator<<(std::ostream &output,  Schedule &schedule);
 
-    
 };
 };
 #endif

@@ -34,7 +34,7 @@ Leauge::Leauge(std::vector<Team*> & curr_teams)
   }
 
 
-
+//build new leauge with 20 new teams
 void Leauge::build_leauge()
 {
     if(this->all_teams.size() >= TEAMS_SIZE ){
@@ -57,6 +57,7 @@ void Leauge::build_leauge()
     }
 }
 
+//if numbers of teams in leauge is under than 20 so the func complete to 20
 void Leauge::complete_leauge(vector<Team*> * teams)
 {
     for( Team * team_ : *teams)
